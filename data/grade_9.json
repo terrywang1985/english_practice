@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "gradeId": 9,
+  "name": "特殊形式",
+  "description": "不可数/只有复数",
+  "requiredScore": 70,
+  "totalQuestions": 10,
+  "totalPool": 22,
+  "questions": [
+    {"id": "g9_t1", "type": "conversion", "question": "单数：trousers（只有复数）", "options": ["trouser", "trousers", "trouserses", "trousers's"], "correctAnswer": 1, "explanation": "trousers（裤子）只有复数形式，没有单数", "tag": "只有复数"},
+    {"id": "g9_t2", "type": "conversion", "question": "单数：scissors（只有复数）", "options": ["scissor", "scissors", "scissorses", "scissors's"], "correctAnswer": 1, "explanation": "scissors（剪刀）只有复数形式，没有单数", "tag": "只有复数"},
+    {"id": "g9_t3", "type": "conversion", "question": "单数：glasses（只有复数）", "options": ["glass", "glasses", "glasseses", "glasses's"], "correctAnswer": 1, "explanation": "glasses（眼镜）只有复数形式，没有单数", "tag": "只有复数"},
+    {"id": "g9_s1", "type": "sentence", "question": "I need a pair of ______.", "options": ["trouser", "trousers", "trouserses", "trousers's"], "correctAnswer": 1, "explanation": "a pair of后接复数，trousers只有复数形式", "tag": "量词+只有复数"},
+    {"id": "g9_t4", "type": "conversion", "question": "单数：jeans（只有复数）", "options": ["jean", "jeans", "jeanses", "jeans's"], "correctAnswer": 1, "explanation": "jeans（牛仔裤）只有复数形式，没有单数", "tag": "只有复数"},
+    {"id": "g9_t5", "type": "conversion", "question": "单数：shorts（只有复数）", "options": ["short", "shorts", "shortses", "shorts's"], "correctAnswer": 1, "explanation": "shorts（短裤）只有复数形式，没有单数", "tag": "只有复数"},
+    {"id": "g9_s2", "type": "sentence", "question": "Where are my ______?", "options": ["scissor", "scissors", "scissorses", "scissors's"], "correctAnswer": 1, "explanation": "are提示复数，scissors只有复数形式", "tag": "be动词are+只有复数"},
+    {"id": "g9_t6", "type": "conversion", "question": "单数：pants（只有复数）", "options": ["pant", "pants", "pantses", "pants's"], "correctAnswer": 1, "explanation": "pants（裤子）只有复数形式，没有单数", "tag": "只有复数"},
+    {"id": "g9_t7", "type": "conversion", "question": "单数：chopsticks（只有复数）", "options": ["chopstick", "chopsticks", "chopstickses", "chopsticks's"], "correctAnswer": 1, "explanation": "chopsticks（筷子）只有复数形式，没有单数", "tag": "只有复数"},
+    {"id": "g9_s3", "type": "sentence", "question": "I wear ______ every day.", "options": ["glass", "glasses", "glasseses", "glasses's"], "correctAnswer": 1, "explanation": "glasses（眼镜）只有复数形式", "tag": "只有复数"},
+    {"id": "g9_t8", "type": "conversion", "question": "单数：clothes（只有复数）", "options": ["cloth", "clothes", "clotheses", "clothes's"], "correctAnswer": 1, "explanation": "clothes（衣服）只有复数形式，cloth是布料", "tag": "只有复数"},
+    {"id": "g9_t9", "type": "conversion", "question": "单数：goods（只有复数）", "options": ["good", "goods", "goodses", "goods's"], "correctAnswer": 1, "explanation": "goods（商品）只有复数形式，good是好的", "tag": "只有复数"},
+    {"id": "g9_s4", "type": "sentence", "question": "These ______ are expensive.", "options": ["good", "goods", "goodses", "goods's"], "correctAnswer": 1, "explanation": "these提示复数，goods只有复数形式", "tag": "指示代词+只有复数"},
+    {"id": "g9_t10", "type": "conversion", "question": "单数：remains（只有复数）", "options": ["remain", "remains", "remainses", "remains's"], "correctAnswer": 1, "explanation": "remains（遗迹）只有复数形式", "tag": "只有复数"},
+    {"id": "g9_t11", "type": "conversion", "question": "单数：thanks（只有复数）", "options": ["thank", "thanks", "thankses", "thanks's"], "correctAnswer": 1, "explanation": "thanks（感谢）只有复数形式", "tag": "只有复数"},
+    {"id": "g9_s5", "type": "sentence", "question": "I bought a new pair of ______.", "options": ["jean", "jeans", "jeanses", "jeans's"], "correctAnswer": 1, "explanation": "a pair of后接复数，jeans只有复数形式", "tag": "量词+只有复数"},
+    {"id": "g9_t12", "type": "conversion", "question": "单数：stairs（只有复数）", "options": ["stair", "stairs", "stairses", "stairs's"], "correctAnswer": 1, "explanation": "stairs（楼梯）只有复数形式", "tag": "只有复数"},
+    {"id": "g9_t13", "type": "conversion", "question": "单数：binoculars（只有复数）", "options": ["binocular", "binoculars", "binocularses", "binoculars's"], "correctAnswer": 1, "explanation": "binoculars（双筒望远镜）只有复数形式", "tag": "只有复数"},
+    {"id": "g9_s6", "type": "sentence", "question": "My ______ are new.", "options": ["pant", "pants", "pantses", "pants's"], "correctAnswer": 1, "explanation": "are提示复数，pants只有复数形式", "tag": "be动词are+只有复数"},
+    {"id": "g9_t14", "type": "conversion", "question": "单数：pliers（只有复数）", "options": ["plier", "pliers", "plierses", "pliers's"], "correctAnswer": 1, "explanation": "pliers（钳子）只有复数形式", "tag": "只有复数"},
+    {"id": "g9_t15", "type": "conversion", "question": "单数：earnings（只有复数）", "options": ["earning", "earnings", "earningses", "earnings's"], "correctAnswer": 1, "explanation": "earnings（收入）只有复数形式", "tag": "只有复数"},
+    {"id": "g9_s7", "type": "sentence", "question": "I need to wash my ______.", "options": ["cloth", "clothes", "clotheses", "clothes's"], "correctAnswer": 1, "explanation": "clothes（衣服）只有复数形式", "tag": "只有复数"}
+  ]
+}

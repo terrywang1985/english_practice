@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "gradeId": 4,
+  "name": "f/fe结尾",
+  "description": "f/fe改v加es",
+  "requiredScore": 26,
+  "totalQuestions": 8,
+  "totalPool": 20,
+  "questions": [
+    {"id": "g4_t1", "type": "conversion", "question": "单数：leaf", "options": ["leafs", "leaves", "leafes", "leaf's"], "correctAnswer": 1, "explanation": "leaf以f结尾，改f为v加es，复数为leaves", "tag": "f改v+es"},
+    {"id": "g4_t2", "type": "conversion", "question": "单数：knife", "options": ["knifes", "knives", "knifees", "knife's"], "correctAnswer": 1, "explanation": "knife以fe结尾，改fe为v加es，复数为knives", "tag": "fe改v+es"},
+    {"id": "g4_t3", "type": "conversion", "question": "单数：wife", "options": ["wifes", "wives", "wifees", "wife's"], "correctAnswer": 1, "explanation": "wife以fe结尾，改fe为v加es，复数为wives", "tag": "fe改v+es"},
+    {"id": "g4_t4", "type": "conversion", "question": "单数：wolf", "options": ["wolfs", "wolves", "wolfes", "wolf's"], "correctAnswer": 1, "explanation": "wolf以f结尾，改f为v加es，复数为wolves", "tag": "f改v+es"},
+    {"id": "g4_s1", "type": "sentence", "question": "I see many ______ on the tree.", "options": ["leaf", "leafs", "leaves", "leaf's"], "correctAnswer": 2, "explanation": "many提示复数，leaf以f结尾，改f为v加es变为leaves", "tag": "数量词+f改v+es"},
+    {"id": "g4_t5", "type": "conversion", "question": "单数：shelf", "options": ["shelfs", "shelves", "shelfes", "shelf's"], "correctAnswer": 1, "explanation": "shelf以f结尾，改f为v加es，复数为shelves", "tag": "f改v+es"},
+    {"id": "g4_t6", "type": "conversion", "question": "单数：half", "options": ["halfs", "halves", "halfes", "half's"], "correctAnswer": 1, "explanation": "half以f结尾，改f为v加es，复数为halves", "tag": "f改v+es"},
+    {"id": "g4_s2", "type": "sentence", "question": "There are two ______ on the table.", "options": ["knife", "knifes", "knives", "knife's"], "correctAnswer": 2, "explanation": "two提示复数，knife以fe结尾，改fe为v加es变为knives", "tag": "数量词+fe改v+es"},
+    {"id": "g4_t7", "type": "conversion", "question": "单数：life", "options": ["lifes", "lives", "lifees", "life's"], "correctAnswer": 1, "explanation": "life以fe结尾，改fe为v加es，复数为lives", "tag": "fe改v+es"},
+    {"id": "g4_t8", "type": "conversion", "question": "单数：thief", "options": ["thiefs", "thieves", "thiefes", "thief's"], "correctAnswer": 1, "explanation": "thief以f结尾，改f为v加es，复数为thieves", "tag": "f改v+es"},
+    {"id": "g4_s3", "type": "sentence", "question": "The ______ are dancing.", "options": ["wolf", "wolfs", "wolves", "wolf's"], "correctAnswer": 2, "explanation": "are提示复数，wolf以f结尾，改f为v加es变为wolves", "tag": "be动词are+f改v+es"},
+    {"id": "g4_t9", "type": "conversion", "question": "单数：calf", "options": ["calfs", "calves", "calfes", "calf's"], "correctAnswer": 1, "explanation": "calf以f结尾，改f为v加es，复数为calves", "tag": "f改v+es"},
+    {"id": "g4_t10", "type": "conversion", "question": "单数：scarf", "options": ["scarfs", "scarves", "scarfes", "scarf's"], "correctAnswer": 1, "explanation": "scarf以f结尾，改f为v加es，复数为scarves", "tag": "f改v+es"},
+    {"id": "g4_s4", "type": "sentence", "question": "I have three ______.", "options": ["shelf", "shelfs", "shelves", "shelf's"], "correctAnswer": 2, "explanation": "three提示复数，shelf以f结尾，改f为v加es变为shelves", "tag": "数量词+f改v+es"},
+    {"id": "g4_t11", "type": "conversion", "question": "单数：loaf", "options": ["loafs", "loaves", "loafes", "loaf's"], "correctAnswer": 1, "explanation": "loaf以f结尾，改f为v加es，复数为loaves", "tag": "f改v+es"},
+    {"id": "g4_t12", "type": "conversion", "question": "单数：self", "options": ["selfs", "selves", "selfes", "self's"], "correctAnswer": 1, "explanation": "self以f结尾，改f为v加es，复数为selves", "tag": "f改v+es"},
+    {"id": "g4_s5", "type": "sentence", "question": "Cats have nine ______.", "options": ["life", "lifes", "lives", "life's"], "correctAnswer": 2, "explanation": "nine提示复数，life以fe结尾，改fe为v加es变为lives", "tag": "数量词+fe改v+es"},
+    {"id": "g4_t13", "type": "conversion", "question": "单数：housewife", "options": ["housewifes", "housewives", "housewifees", "housewife's"], "correctAnswer": 1, "explanation": "housewife以fe结尾，改fe为v加es，复数为housewives", "tag": "fe改v+es"},
+    {"id": "g4_t14", "type": "conversion", "question": "单数：elf", "options": ["elfs", "elves", "elfes", "elf's"], "correctAnswer": 1, "explanation": "elf以f结尾，改f为v加es，复数为elves", "tag": "f改v+es"},
+    {"id": "g4_s6", "type": "sentence", "question": "The ______ are very sharp.", "options": ["knife", "knifes", "knives", "knife's"], "correctAnswer": 2, "explanation": "are提示复数，knife以fe结尾，改fe为v加es变为knives", "tag": "be动词are+fe改v+es"}
+  ]
+}

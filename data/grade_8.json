@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "gradeId": 8,
+  "name": "单复同形",
+  "description": "sheep→sheep等",
+  "requiredScore": 62,
+  "totalQuestions": 8,
+  "totalPool": 20,
+  "questions": [
+    {"id": "g8_t1", "type": "conversion", "question": "单数：sheep", "options": ["sheep", "sheeps", "sheepes", "sheep's"], "correctAnswer": 0, "explanation": "sheep单复数同形，复数仍为sheep", "tag": "单复同形"},
+    {"id": "g8_t2", "type": "conversion", "question": "单数：deer", "options": ["deer", "deers", "deeres", "deer's"], "correctAnswer": 0, "explanation": "deer单复数同形，复数仍为deer", "tag": "单复同形"},
+    {"id": "g8_t3", "type": "conversion", "question": "单数：fish", "options": ["fish", "fishes", "fishees", "fish's"], "correctAnswer": 0, "explanation": "fish单复数同形，复数仍为fish（表种类时可用fishes）", "tag": "单复同形"},
+    {"id": "g8_s1", "type": "sentence", "question": "I see many ______ in the field.", "options": ["sheep", "sheeps", "sheepes", "sheep's"], "correctAnswer": 0, "explanation": "many提示复数，sheep单复数同形", "tag": "数量词+单复同形"},
+    {"id": "g8_t4", "type": "conversion", "question": "单数：Chinese", "options": ["Chinese", "Chineses", "Chinesees", "Chinese's"], "correctAnswer": 0, "explanation": "Chinese（中国人）单复数同形", "tag": "单复同形-国籍"},
+    {"id": "g8_t5", "type": "conversion", "question": "单数：Japanese", "options": ["Japanese", "Japaneses", "Japanesees", "Japanese's"], "correctAnswer": 0, "explanation": "Japanese（日本人）单复数同形", "tag": "单复同形-国籍"},
+    {"id": "g8_s2", "type": "sentence", "question": "There are five ______ in the river.", "options": ["fish", "fishes", "fishees", "fish's"], "correctAnswer": 0, "explanation": "five提示复数，fish单复数同形", "tag": "数量词+单复同形"},
+    {"id": "g8_t6", "type": "conversion", "question": "单数：Swiss", "options": ["Swiss", "Swisses", "Swissees", "Swiss's"], "correctAnswer": 0, "explanation": "Swiss（瑞士人）单复数同形", "tag": "单复同形-国籍"},
+    {"id": "g8_t7", "type": "conversion", "question": "单数：series", "options": ["series", "serieses", "serieses", "series's"], "correctAnswer": 0, "explanation": "series单复数同形，复数仍为series", "tag": "单复同形"},
+    {"id": "g8_s3", "type": "sentence", "question": "The ______ are running.", "options": ["deer", "deers", "deeres", "deer's"], "correctAnswer": 0, "explanation": "are提示复数，deer单复数同形", "tag": "be动词are+单复同形"},
+    {"id": "g8_t8", "type": "conversion", "question": "单数：species", "options": ["species", "specieses", "specieses", "species's"], "correctAnswer": 0, "explanation": "species单复数同形，复数仍为species", "tag": "单复同形"},
+    {"id": "g8_t9", "type": "conversion", "question": "单数：means", "options": ["means", "meanses", "meanes", "means's"], "correctAnswer": 0, "explanation": "means（方法）单复数同形", "tag": "单复同形"},
+    {"id": "g8_s4", "type": "sentence", "question": "Many ______ visit here.", "options": ["Chinese", "Chineses", "Chinesees", "Chinese's"], "correctAnswer": 0, "explanation": "many提示复数，Chinese单复数同形", "tag": "数量词+单复同形-国籍"},
+    {"id": "g8_t10", "type": "conversion", "question": "单数：Portuguese", "options": ["Portuguese", "Portugueses", "Portuguesees", "Portuguese's"], "correctAnswer": 0, "explanation": "Portuguese（葡萄牙人）单复数同形", "tag": "单复同形-国籍"},
+    {"id": "g8_t11", "type": "conversion", "question": "单数：aircraft", "options": ["aircraft", "aircrafts", "aircraftes", "aircraft's"], "correctAnswer": 0, "explanation": "aircraft单复数同形，复数仍为aircraft", "tag": "单复同形"},
+    {"id": "g8_s5", "type": "sentence", "question": "I caught ten ______.", "options": ["fish", "fishes", "fishees", "fish's"], "correctAnswer": 0, "explanation": "ten提示复数，fish单复数同形", "tag": "数量词+单复同形"},
+    {"id": "g8_t12", "type": "conversion", "question": "单数：spacecraft", "options": ["spacecraft", "spacecrafts", "spacecraftes", "spacecraft's"], "correctAnswer": 0, "explanation": "spacecraft单复数同形，复数仍为spacecraft", "tag": "单复同形"},
+    {"id": "g8_t13", "type": "conversion", "question": "单数：Vietnamese", "options": ["Vietnamese", "Vietnameses", "Vietnamesees", "Vietnamese's"], "correctAnswer": 0, "explanation": "Vietnamese（越南人）单复数同形", "tag": "单复同形-国籍"},
+    {"id": "g8_s6", "type": "sentence", "question": "There are many ______ on the farm.", "options": ["sheep", "sheeps", "sheepes", "sheep's"], "correctAnswer": 0, "explanation": "many提示复数，sheep单复数同形", "tag": "数量词+单复同形"},
+    {"id": "g8_t14", "type": "conversion", "question": "单数：crossroads", "options": ["crossroads", "crossroadses", "crossroades", "crossroads's"], "correctAnswer": 0, "explanation": "crossroads单复数同形，复数仍为crossroads", "tag": "单复同形"}
+  ]
+}

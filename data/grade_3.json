@@ -5,6 +5,7 @@
   "description": "辅音+y改i+es / 元音+y加s",
   "requiredScore": 16,
   "totalQuestions": 10,
+  "totalPool": 24,
   "questions": [
     {
       "id": "g3_t1",
@@ -95,6 +96,17 @@
       "correctAnswer": 2,
       "explanation": "are提示复数，family以辅音+y结尾，改y为i加es变为families",
       "tag": "be动词are+辅音+y改i+es"
-    }
+    },
+    {"id": "g3_t7", "type": "conversion", "question": "单数：butterfly", "options": ["butterflys", "butterflies", "butterflyes", "butterfly's"], "correctAnswer": 1, "explanation": "butterfly以辅音+y结尾，改y为i加es，复数为butterflies", "tag": "辅音+y改i+es"},
+    {"id": "g3_t8", "type": "conversion", "question": "单数：monkey", "options": ["monkeys", "monkies", "monkeyes", "monkey's"], "correctAnswer": 0, "explanation": "monkey以元音+y结尾，直接加s，复数为monkeys", "tag": "元音+y加s"},
+    {"id": "g3_s5", "type": "sentence", "question": "She has many ______.", "options": ["hobby", "hobbys", "hobbies", "hobby's"], "correctAnswer": 2, "explanation": "many提示复数，hobby以辅音+y结尾，改y为i加es变为hobbies", "tag": "数量词+辅音+y改i+es"},
+    {"id": "g3_t9", "type": "conversion", "question": "单数：country", "options": ["countrys", "countries", "countryes", "country's"], "correctAnswer": 1, "explanation": "country以辅音+y结尾，改y为i加es，复数为countries", "tag": "辅音+y改i+es"},
+    {"id": "g3_t10", "type": "conversion", "question": "单数：valley", "options": ["valleys", "vallies", "valleyes", "valley's"], "correctAnswer": 0, "explanation": "valley以元音+y结尾，直接加s，复数为valleys", "tag": "元音+y加s"},
+    {"id": "g3_s6", "type": "sentence", "question": "There are many ______ in the library.", "options": ["dictionary", "dictionarys", "dictionaries", "dictionary's"], "correctAnswer": 2, "explanation": "many提示复数，dictionary以辅音+y结尾，改y为i加es变为dictionaries", "tag": "数量词+辅音+y改i+es"},
+    {"id": "g3_t11", "type": "conversion", "question": "单数：party", "options": ["partys", "parties", "partyes", "party's"], "correctAnswer": 1, "explanation": "party以辅音+y结尾，改y为i加es，复数为parties", "tag": "辅音+y改i+es"},
+    {"id": "g3_t12", "type": "conversion", "question": "单数：donkey", "options": ["donkeys", "donkies", "donkeyes", "donkey's"], "correctAnswer": 0, "explanation": "donkey以元音+y结尾，直接加s，复数为donkeys", "tag": "元音+y加s"},
+    {"id": "g3_s7", "type": "sentence", "question": "I like ______.", "options": ["strawberry", "strawberrys", "strawberries", "strawberry's"], "correctAnswer": 2, "explanation": "根据语境应填复数，strawberry以辅音+y结尾，改y为i加es变为strawberries", "tag": "辅音+y改i+es"},
+    {"id": "g3_t13", "type": "conversion", "question": "单数：library", "options": ["librarys", "libraries", "libraryes", "library's"], "correctAnswer": 1, "explanation": "library以辅音+y结尾，改y为i加es，复数为libraries", "tag": "辅音+y改i+es"},
+    {"id": "g3_t14", "type": "conversion", "question": "单数：highway", "options": ["highways", "highwies", "highwayes", "highway's"], "correctAnswer": 0, "explanation": "highway以元音+y结尾，直接加s，复数为highways", "tag": "元音+y加s"}
   ]
 }

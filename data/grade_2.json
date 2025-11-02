@@ -5,6 +5,7 @@
   "description": "以s, x, ch, sh结尾加-es",
   "requiredScore": 8,
   "totalQuestions": 8,
+  "totalPool": 24,
   "questions": [
     {
       "id": "g2_t1",
@@ -77,6 +78,21 @@
       "correctAnswer": 2,
       "explanation": "many提示复数，fox以x结尾，加es变为foxes",
       "tag": "数量词+x结尾+es"
-    }
+    },
+    {"id": "g2_t6", "type": "conversion", "question": "单数：beach", "options": ["beaches", "beachs", "beachies", "beach's"], "correctAnswer": 0, "explanation": "beach以ch结尾，加es，复数为beaches", "tag": "ch结尾+es"},
+    {"id": "g2_t7", "type": "conversion", "question": "单数：dress", "options": ["dresses", "dresss", "dressies", "dress's"], "correctAnswer": 0, "explanation": "dress以ss结尾，加es，复数为dresses", "tag": "ss结尾+es"},
+    {"id": "g2_s4", "type": "sentence", "question": "I have many ______.", "options": ["wish", "wishs", "wishes", "wish's"], "correctAnswer": 2, "explanation": "many提示复数，wish以sh结尾，加es变为wishes", "tag": "数量词+sh结尾+es"},
+    {"id": "g2_t8", "type": "conversion", "question": "单数：peach", "options": ["peaches", "peachs", "peachies", "peach's"], "correctAnswer": 0, "explanation": "peach以ch结尾，加es，复数为peaches", "tag": "ch结尾+es"},
+    {"id": "g2_t9", "type": "conversion", "question": "单数：lunch", "options": ["lunches", "lunchs", "lunchies", "lunch's"], "correctAnswer": 0, "explanation": "lunch以ch结尾，加es，复数为lunches", "tag": "ch结尾+es"},
+    {"id": "g2_s5", "type": "sentence", "question": "There are many ______ in the room.", "options": ["bench", "benchs", "benches", "bench's"], "correctAnswer": 2, "explanation": "many提示复数，bench以ch结尾，加es变为benches", "tag": "数量词+ch结尾+es"},
+    {"id": "g2_t10", "type": "conversion", "question": "单数：kiss", "options": ["kisses", "kisss", "kissies", "kiss's"], "correctAnswer": 0, "explanation": "kiss以ss结尾，加es，复数为kisses", "tag": "ss结尾+es"},
+    {"id": "g2_t11", "type": "conversion", "question": "单数：match", "options": ["matches", "matchs", "matchies", "match's"], "correctAnswer": 0, "explanation": "match以ch结尾，加es，复数为matches", "tag": "ch结尾+es"},
+    {"id": "g2_s6", "type": "sentence", "question": "She teaches three ______.", "options": ["class", "classs", "classes", "class's"], "correctAnswer": 2, "explanation": "three提示复数，class以ss结尾，加es变为classes", "tag": "数量词+ss结尾+es"},
+    {"id": "g2_t12", "type": "conversion", "question": "单数：flash", "options": ["flashes", "flashs", "flashies", "flash's"], "correctAnswer": 0, "explanation": "flash以sh结尾，加es，复数为flashes", "tag": "sh结尾+es"},
+    {"id": "g2_t13", "type": "conversion", "question": "单数：tax", "options": ["taxes", "taxs", "taxies", "tax's"], "correctAnswer": 0, "explanation": "tax以x结尾，加es，复数为taxes", "tag": "x结尾+es"},
+    {"id": "g2_s7", "type": "sentence", "question": "There are many ______ on the shelf.", "options": ["box", "boxs", "boxes", "box's"], "correctAnswer": 2, "explanation": "many提示复数，box以x结尾，加es变为boxes", "tag": "数量词+x结尾+es"},
+    {"id": "g2_t14", "type": "conversion", "question": "单数：church", "options": ["churches", "churchs", "churchies", "church's"], "correctAnswer": 0, "explanation": "church以ch结尾，加es，复数为churches", "tag": "ch结尾+es"},
+    {"id": "g2_t15", "type": "conversion", "question": "单数：boss", "options": ["bosses", "bosss", "bossies", "boss's"], "correctAnswer": 0, "explanation": "boss以ss结尾，加es，复数为bosses", "tag": "ss结尾+es"},
+    {"id": "g2_s8", "type": "sentence", "question": "I wash the ______ every day.", "options": ["dish", "dishs", "dishes", "dish's"], "correctAnswer": 2, "explanation": "根据语境应填复数，dish以sh结尾，加es变为dishes", "tag": "sh结尾+es"}
   ]
 }

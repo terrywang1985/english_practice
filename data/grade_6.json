@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "gradeId": 6,
+  "name": "元音变化",
+  "description": "man→men类不规则",
+  "requiredScore": 44,
+  "totalQuestions": 10,
+  "totalPool": 22,
+  "questions": [
+    {"id": "g6_t1", "type": "conversion", "question": "单数：man", "options": ["mans", "men", "manes", "man's"], "correctAnswer": 1, "explanation": "man是不规则变化，复数为men", "tag": "不规则a→e"},
+    {"id": "g6_t2", "type": "conversion", "question": "单数：woman", "options": ["womans", "women", "womanes", "woman's"], "correctAnswer": 1, "explanation": "woman是不规则变化，复数为women", "tag": "不规则o→e"},
+    {"id": "g6_t3", "type": "conversion", "question": "单数：foot", "options": ["foots", "feet", "footes", "foot's"], "correctAnswer": 1, "explanation": "foot是不规则变化，复数为feet", "tag": "不规则oo→ee"},
+    {"id": "g6_t4", "type": "conversion", "question": "单数：tooth", "options": ["tooths", "teeth", "toothes", "tooth's"], "correctAnswer": 1, "explanation": "tooth是不规则变化，复数为teeth", "tag": "不规则oo→ee"},
+    {"id": "g6_s1", "type": "sentence", "question": "I see three ______.", "options": ["man", "mans", "men", "man's"], "correctAnswer": 2, "explanation": "three提示复数，man是不规则变化，复数为men", "tag": "数量词+不规则"},
+    {"id": "g6_t5", "type": "conversion", "question": "单数：goose", "options": ["gooses", "geese", "goosees", "goose's"], "correctAnswer": 1, "explanation": "goose是不规则变化，复数为geese", "tag": "不规则oo→ee"},
+    {"id": "g6_s2", "type": "sentence", "question": "There are many ______ in the park.", "options": ["woman", "womans", "women", "woman's"], "correctAnswer": 2, "explanation": "many提示复数，woman是不规则变化，复数为women", "tag": "数量词+不规则"},
+    {"id": "g6_t6", "type": "conversion", "question": "单数：policeman", "options": ["policemans", "policemen", "policemanes", "policeman's"], "correctAnswer": 1, "explanation": "policeman是复合词，man变men，复数为policemen", "tag": "复合词不规则"},
+    {"id": "g6_t7", "type": "conversion", "question": "单数：fireman", "options": ["firemans", "firemen", "firemanes", "fireman's"], "correctAnswer": 1, "explanation": "fireman是复合词，man变men，复数为firemen", "tag": "复合词不规则"},
+    {"id": "g6_s3", "type": "sentence", "question": "My ______ hurt.", "options": ["foot", "foots", "feet", "foot's"], "correctAnswer": 2, "explanation": "hurt动词用复数，foot是不规则变化，复数为feet", "tag": "不规则oo→ee"},
+    {"id": "g6_t8", "type": "conversion", "question": "单数：postman", "options": ["postmans", "postmen", "postmanes", "postman's"], "correctAnswer": 1, "explanation": "postman是复合词，man变men，复数为postmen", "tag": "复合词不规则"},
+    {"id": "g6_t9", "type": "conversion", "question": "单数：businessman", "options": ["businessmans", "businessmen", "businessmanes", "businessman's"], "correctAnswer": 1, "explanation": "businessman是复合词，man变men，复数为businessmen", "tag": "复合词不规则"},
+    {"id": "g6_s4", "type": "sentence", "question": "I need to brush my ______.", "options": ["tooth", "tooths", "teeth", "tooth's"], "correctAnswer": 2, "explanation": "根据语境应填复数，tooth是不规则变化，复数为teeth", "tag": "不规则oo→ee"},
+    {"id": "g6_t10", "type": "conversion", "question": "单数：fisherman", "options": ["fishermans", "fishermen", "fishermanes", "fisherman's"], "correctAnswer": 1, "explanation": "fisherman是复合词，man变men，复数为fishermen", "tag": "复合词不规则"},
+    {"id": "g6_s5", "type": "sentence", "question": "The ______ are swimming.", "options": ["goose", "gooses", "geese", "goose's"], "correctAnswer": 2, "explanation": "are提示复数，goose是不规则变化，复数为geese", "tag": "be动词are+不规则"},
+    {"id": "g6_t11", "type": "conversion", "question": "单数：gentlemen", "options": ["gentleman", "gentlemans", "gentlemen", "gentleman's"], "correctAnswer": 0, "explanation": "反向题：gentlemen是复数，单数为gentleman", "tag": "反向不规则"},
+    {"id": "g6_t12", "type": "conversion", "question": "单数：snowman", "options": ["snowmans", "snowmen", "snowmanes", "snowman's"], "correctAnswer": 1, "explanation": "snowman是复合词，man变men，复数为snowmen", "tag": "复合词不规则"},
+    {"id": "g6_s6", "type": "sentence", "question": "There are many ______ here.", "options": ["policeman", "policemans", "policemen", "policeman's"], "correctAnswer": 2, "explanation": "many提示复数，policeman是复合词，复数为policemen", "tag": "数量词+复合词不规则"},
+    {"id": "g6_t13", "type": "conversion", "question": "单数：saleswoman", "options": ["saleswomans", "saleswomen", "saleswomanes", "saleswoman's"], "correctAnswer": 1, "explanation": "saleswoman是复合词，woman变women，复数为saleswomen", "tag": "复合词不规则"},
+    {"id": "g6_t14", "type": "conversion", "question": "单数：chairman", "options": ["chairmans", "chairmen", "chairmanes", "chairman's"], "correctAnswer": 1, "explanation": "chairman是复合词，man变men，复数为chairmen", "tag": "复合词不规则"},
+    {"id": "g6_s7", "type": "sentence", "question": "The ______ are very beautiful.", "options": ["woman", "womans", "women", "woman's"], "correctAnswer": 2, "explanation": "are提示复数，woman是不规则变化，复数为women", "tag": "be动词are+不规则"},
+    {"id": "g6_t15", "type": "conversion", "question": "单数：workman", "options": ["workmans", "workmen", "workmanes", "workman's"], "correctAnswer": 1, "explanation": "workman是复合词，man变men，复数为workmen", "tag": "复合词不规则"}
+  ]
+}

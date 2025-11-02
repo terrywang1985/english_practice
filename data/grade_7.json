@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "gradeId": 7,
+  "name": "特殊不规则",
+  "description": "child→children等",
+  "requiredScore": 54,
+  "totalQuestions": 8,
+  "totalPool": 20,
+  "questions": [
+    {"id": "g7_t1", "type": "conversion", "question": "单数：child", "options": ["childs", "children", "childes", "child's"], "correctAnswer": 1, "explanation": "child是特殊不规则变化，复数为children", "tag": "特殊不规则"},
+    {"id": "g7_t2", "type": "conversion", "question": "单数：ox", "options": ["oxs", "oxen", "oxes", "ox's"], "correctAnswer": 1, "explanation": "ox是特殊不规则变化，复数为oxen", "tag": "特殊不规则"},
+    {"id": "g7_t3", "type": "conversion", "question": "单数：mouse", "options": ["mouses", "mice", "mousees", "mouse's"], "correctAnswer": 1, "explanation": "mouse是特殊不规则变化，复数为mice", "tag": "特殊不规则"},
+    {"id": "g7_s1", "type": "sentence", "question": "There are many ______ playing.", "options": ["child", "childs", "children", "child's"], "correctAnswer": 2, "explanation": "many提示复数，child的复数为children", "tag": "数量词+特殊不规则"},
+    {"id": "g7_t4", "type": "conversion", "question": "单数：louse", "options": ["louses", "lice", "lousees", "louse's"], "correctAnswer": 1, "explanation": "louse是特殊不规则变化，复数为lice", "tag": "特殊不规则"},
+    {"id": "g7_s2", "type": "sentence", "question": "I see three ______.", "options": ["mouse", "mouses", "mice", "mouse's"], "correctAnswer": 2, "explanation": "three提示复数，mouse的复数为mice", "tag": "数量词+特殊不规则"},
+    {"id": "g7_t5", "type": "conversion", "question": "单数：grandchild", "options": ["grandchilds", "grandchildren", "grandchildes", "grandchild's"], "correctAnswer": 1, "explanation": "grandchild是复合词，child变children，复数为grandchildren", "tag": "复合词特殊不规则"},
+    {"id": "g7_t6", "type": "conversion", "question": "单数：dormouse", "options": ["dormouses", "dormice", "dormousees", "dormouse's"], "correctAnswer": 1, "explanation": "dormouse是复合词，mouse变mice，复数为dormice", "tag": "复合词特殊不规则"},
+    {"id": "g7_s3", "type": "sentence", "question": "The ______ are very cute.", "options": ["child", "childs", "children", "child's"], "correctAnswer": 2, "explanation": "are提示复数，child的复数为children", "tag": "be动词are+特殊不规则"},
+    {"id": "g7_t7", "type": "conversion", "question": "单数：stepchild", "options": ["stepchilds", "stepchildren", "stepchildes", "stepchild's"], "correctAnswer": 1, "explanation": "stepchild是复合词，child变children，复数为stepchildren", "tag": "复合词特殊不规则"},
+    {"id": "g7_s4", "type": "sentence", "question": "There are two ______ in the field.", "options": ["ox", "oxs", "oxen", "ox's"], "correctAnswer": 2, "explanation": "two提示复数，ox的复数为oxen", "tag": "数量词+特殊不规则"},
+    {"id": "g7_t8", "type": "conversion", "question": "单数：schoolchild", "options": ["schoolchilds", "schoolchildren", "schoolchildes", "schoolchild's"], "correctAnswer": 1, "explanation": "schoolchild是复合词，child变children，复数为schoolchildren", "tag": "复合词特殊不规则"},
+    {"id": "g7_t9", "type": "conversion", "question": "单数：godchild", "options": ["godchilds", "godchildren", "godchildes", "godchild's"], "correctAnswer": 1, "explanation": "godchild是复合词，child变children，复数为godchildren", "tag": "复合词特殊不规则"},
+    {"id": "g7_s5", "type": "sentence", "question": "I caught some ______.", "options": ["mouse", "mouses", "mice", "mouse's"], "correctAnswer": 2, "explanation": "some提示复数，mouse的复数为mice", "tag": "数量词+特殊不规则"},
+    {"id": "g7_t10", "type": "conversion", "question": "单数：brainchild", "options": ["brainchilds", "brainchildren", "brainchildes", "brainchild's"], "correctAnswer": 1, "explanation": "brainchild是复合词，child变children，复数为brainchildren", "tag": "复合词特殊不规则"},
+    {"id": "g7_t11", "type": "conversion", "question": "单数：fieldmouse", "options": ["fieldmouses", "fieldmice", "fieldmousees", "fieldmouse's"], "correctAnswer": 1, "explanation": "fieldmouse是复合词，mouse变mice，复数为fieldmice", "tag": "复合词特殊不规则"},
+    {"id": "g7_s6", "type": "sentence", "question": "The ______ love their parents.", "options": ["child", "childs", "children", "child's"], "correctAnswer": 2, "explanation": "love动词用复数，child的复数为children", "tag": "特殊不规则"},
+    {"id": "g7_t12", "type": "conversion", "question": "单数：maidservant", "options": ["maidservants", "maidservants", "maidservantes", "maidservant's"], "correctAnswer": 0, "explanation": "maidservant是普通名词，直接加s，复数为maidservants", "tag": "对照题-直接加s"},
+    {"id": "g7_t13", "type": "conversion", "question": "单数：grandchildren", "options": ["grandchild", "grandchilds", "grandchildren", "grandchild's"], "correctAnswer": 0, "explanation": "反向题：grandchildren是复数，单数为grandchild", "tag": "反向特殊不规则"},
+    {"id": "g7_s7", "type": "sentence", "question": "We found many ______ in the house.", "options": ["mouse", "mouses", "mice", "mouse's"], "correctAnswer": 2, "explanation": "many提示复数，mouse的复数为mice", "tag": "数量词+特殊不规则"}
+  ]
+}
