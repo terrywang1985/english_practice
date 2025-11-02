@@ -5,7 +5,7 @@
   "description": "以s, x, ch, sh结尾加-es",
   "requiredScore": 8,
   "totalQuestions": 8,
-  "totalPool": 24,
+  "totalPool": 30,
   "questions": [
     {
       "id": "g2_t1",
@@ -93,6 +93,12 @@
     {"id": "g2_s7", "type": "sentence", "question": "There are many ______ on the shelf.", "options": ["box", "boxs", "boxes", "box's"], "correctAnswer": 2, "explanation": "many提示复数，box以x结尾，加es变为boxes", "tag": "数量词+x结尾+es"},
     {"id": "g2_t14", "type": "conversion", "question": "单数：church", "options": ["churches", "churchs", "churchies", "church's"], "correctAnswer": 0, "explanation": "church以ch结尾，加es，复数为churches", "tag": "ch结尾+es"},
     {"id": "g2_t15", "type": "conversion", "question": "单数：boss", "options": ["bosses", "bosss", "bossies", "boss's"], "correctAnswer": 0, "explanation": "boss以ss结尾，加es，复数为bosses", "tag": "ss结尾+es"},
-    {"id": "g2_s8", "type": "sentence", "question": "I wash the ______ every day.", "options": ["dish", "dishs", "dishes", "dish's"], "correctAnswer": 2, "explanation": "根据语境应填复数，dish以sh结尾，加es变为dishes", "tag": "sh结尾+es"}
+    {"id": "g2_s8", "type": "sentence", "question": "I wash the ______ every day.", "options": ["dish", "dishs", "dishes", "dish's"], "correctAnswer": 2, "explanation": "根据语境应填复数，dish以sh结尾，加es变为dishes", "tag": "sh结尾+es"},
+    {"id": "g2_trap1", "type": "conversion", "question": "单数：book", "options": ["books", "bookes", "booxes", "book's"], "correctAnswer": 0, "explanation": "干扰题！book不以特殊结尾，直接加s", "tag": "干扰-直接加s"},
+    {"id": "g2_trap2", "type": "conversion", "question": "单数：dog", "options": ["dogs", "doges", "dogxes", "dog's"], "correctAnswer": 0, "explanation": "干扰题！dog不以特殊结尾，直接加s", "tag": "干扰-直接加s"},
+    {"id": "g2_trap3", "type": "sentence", "question": "I have one ______.", "options": ["box", "boxs", "boxes", "box's"], "correctAnswer": 0, "explanation": "陷阱题！one表示单数，应填单数形式box", "tag": "陷阱-单数形式"},
+    {"id": "g2_trap4", "type": "sentence", "question": "There are many ______.", "options": ["cat", "cats", "cates", "cat's"], "correctAnswer": 1, "explanation": "干扰题！cat不以特殊结尾，直接加s变为cats", "tag": "干扰-直接加s"},
+    {"id": "g2_trap5", "type": "sentence", "question": "This ______ is new.", "options": ["bus", "buss", "buses", "bus's"], "correctAnswer": 0, "explanation": "陷阱题！This+is表示单数，应填单数形式bus", "tag": "陷阱-单数形式"},
+    {"id": "g2_trap6", "type": "conversion", "question": "单数：bird", "options": ["birds", "birdes", "birdxes", "bird's"], "correctAnswer": 0, "explanation": "干扰题！bird不以特殊结尾，直接加s", "tag": "干扰-直接加s"}
   ]
 }

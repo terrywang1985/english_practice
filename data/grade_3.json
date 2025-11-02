@@ -5,7 +5,7 @@
   "description": "辅音+y改i+es / 元音+y加s",
   "requiredScore": 16,
   "totalQuestions": 10,
-  "totalPool": 24,
+  "totalPool": 28,
   "questions": [
     {
       "id": "g3_t1",
@@ -107,6 +107,10 @@
     {"id": "g3_t12", "type": "conversion", "question": "单数：donkey", "options": ["donkeys", "donkies", "donkeyes", "donkey's"], "correctAnswer": 0, "explanation": "donkey以元音+y结尾，直接加s，复数为donkeys", "tag": "元音+y加s"},
     {"id": "g3_s7", "type": "sentence", "question": "I like ______.", "options": ["strawberry", "strawberrys", "strawberries", "strawberry's"], "correctAnswer": 2, "explanation": "根据语境应填复数，strawberry以辅音+y结尾，改y为i加es变为strawberries", "tag": "辅音+y改i+es"},
     {"id": "g3_t13", "type": "conversion", "question": "单数：library", "options": ["librarys", "libraries", "libraryes", "library's"], "correctAnswer": 1, "explanation": "library以辅音+y结尾，改y为i加es，复数为libraries", "tag": "辅音+y改i+es"},
-    {"id": "g3_t14", "type": "conversion", "question": "单数：highway", "options": ["highways", "highwies", "highwayes", "highway's"], "correctAnswer": 0, "explanation": "highway以元音+y结尾，直接加s，复数为highways", "tag": "元音+y加s"}
+    {"id": "g3_t14", "type": "conversion", "question": "单数：highway", "options": ["highways", "highwies", "highwayes", "highway's"], "correctAnswer": 0, "explanation": "highway以元音+y结尾，直接加s，复数为highways", "tag": "元音+y加s"},
+    {"id": "g3_trap1", "type": "conversion", "question": "单数：box", "options": ["boxs", "boxes", "boxies", "box's"], "correctAnswer": 1, "explanation": "干扰题！box以x结尾，加es，不是y结尾", "tag": "干扰-x结尾+es"},
+    {"id": "g3_trap2", "type": "conversion", "question": "单数：dog", "options": ["dogs", "dogies", "doges", "dog's"], "correctAnswer": 0, "explanation": "干扰题！dog直接加s，不是y结尾", "tag": "干扰-直接加s"},
+    {"id": "g3_trap3", "type": "sentence", "question": "This is a ______.", "options": ["baby", "babys", "babies", "baby's"], "correctAnswer": 0, "explanation": "陷阱题！is a表示单数，应填单数形式baby", "tag": "陷阱-单数形式"},
+    {"id": "g3_trap4", "type": "sentence", "question": "There are many ______.", "options": ["watch", "watchs", "watches", "watchies"], "correctAnswer": 2, "explanation": "干扰题！watch以ch结尾加es，不是y结尾", "tag": "干扰-ch结尾+es"}
   ]
 }

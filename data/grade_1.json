@@ -5,7 +5,7 @@
   "description": "规则复数 - 直接加s",
   "requiredScore": 0,
   "totalQuestions": 8,
-  "totalPool": 24,
+  "totalPool": 28,
   "questions": [
     {
       "id": "g1_t1",
@@ -258,6 +258,10 @@
       "correctAnswer": 1,
       "explanation": "many提示复数，desk直接加s变为desks",
       "tag": "数量词+直接加s"
-    }
+    },
+    {"id": "g1_trap1", "type": "sentence", "question": "This is a ______.", "options": ["book", "books", "bookes", "book's"], "correctAnswer": 0, "explanation": "陷阱题！This is a表示单数，应填单数形式book", "tag": "陷阱-单数形式"},
+    {"id": "g1_trap2", "type": "sentence", "question": "I have one ______.", "options": ["apple", "apples", "applees", "apple's"], "correctAnswer": 0, "explanation": "陷阱题！one表示一个，应填单数形式apple", "tag": "陷阱-单数形式"},
+    {"id": "g1_trap3", "type": "sentence", "question": "She is a ______.", "options": ["teacher", "teachers", "teacheres", "teacher's"], "correctAnswer": 0, "explanation": "陷阱题！is a表示单数，应填单数形式teacher", "tag": "陷阱-单数形式"},
+    {"id": "g1_trap4", "type": "sentence", "question": "That ______ is big.", "options": ["dog", "dogs", "doges", "dog's"], "correctAnswer": 0, "explanation": "陷阱题！That+is表示单数，应填单数形式dog", "tag": "陷阱-单数形式"}
   ]
 }
