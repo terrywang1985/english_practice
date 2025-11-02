@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "totalGrades": 10,
+  "grades": [
+    {
+      "gradeId": 1,
+      "name": "基础入门",
+      "description": "规则复数 - 直接加s",
+      "requiredScore": 0,
+      "totalQuestions": 8,
+      "icon": "📚"
+    },
+    {
+      "gradeId": 2,
+      "name": "特殊结尾",
+      "description": "以s, x, ch, sh结尾加-es",
+      "requiredScore": 8,
+      "totalQuestions": 8,
+      "icon": "📦"
+    },
+    {
+      "gradeId": 3,
+      "name": "y结尾变化",
+      "description": "辅音+y改i+es / 元音+y加s",
+      "requiredScore": 16,
+      "totalQuestions": 10,
+      "icon": "🔤"
+    },
+    {
+      "gradeId": 4,
+      "name": "f/fe结尾",
+      "description": "f/fe改v加es",
+      "requiredScore": 26,
+      "totalQuestions": 8,
+      "icon": "🔪"
+    },
+    {
+      "gradeId": 5,
+      "name": "o结尾分化",
+      "description": "有生命+es / 无生命+s",
+      "requiredScore": 34,
+      "totalQuestions": 10,
+      "icon": "🍅"
+    },
+    {
+      "gradeId": 6,
+      "name": "元音变化",
+      "description": "man→men类不规则",
+      "requiredScore": 44,
+      "totalQuestions": 10,
+      "icon": "👨"
+    },
+    {
+      "gradeId": 7,
+      "name": "特殊不规则",
+      "description": "child→children等",
+      "requiredScore": 54,
+      "totalQuestions": 8,
+      "icon": "👶"
+    },
+    {
+      "gradeId": 8,
+      "name": "单复同形",
+      "description": "sheep→sheep等",
+      "requiredScore": 62,
+      "totalQuestions": 8,
+      "icon": "🐑"
+    },
+    {
+      "gradeId": 9,
+      "name": "特殊形式",
+      "description": "不可数/只有复数",
+      "requiredScore": 70,
+      "totalQuestions": 10,
+      "icon": "💧"
+    },
+    {
+      "gradeId": 10,
+      "name": "综合挑战",
+      "description": "混合所有考点",
+      "requiredScore": 80,
+      "totalQuestions": 20,
+      "icon": "🏆"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "version": "1.0.0",
+  "gradeId": 3,
+  "name": "y结尾变化",
+  "description": "辅音+y改i+es / 元音+y加s",
+  "requiredScore": 16,
+  "totalQuestions": 10,
+  "questions": [
+    {
+      "id": "g3_t1",
+      "type": "conversion",
+      "question": "单数：baby",
+      "options": ["babys", "babies", "babyes", "baby's"],
+      "correctAnswer": 1,
+      "explanation": "baby以辅音+y结尾，改y为i加es，复数为babies",
+      "tag": "辅音+y改i+es"
+    },
+    {
+      "id": "g3_t2",
+      "type": "conversion",
+      "question": "单数：city",
+      "options": ["citys", "cities", "cityes", "city's"],
+      "correctAnswer": 1,
+      "explanation": "city以辅音+y结尾，改y为i加es，复数为cities",
+      "tag": "辅音+y改i+es"
+    },
+    {
+      "id": "g3_t3",
+      "type": "conversion",
+      "question": "单数：boy",
+      "options": ["boys", "boies", "boyes", "boy's"],
+      "correctAnswer": 0,
+      "explanation": "boy以元音+y结尾，直接加s，复数为boys",
+      "tag": "元音+y加s"
+    },
+    {
+      "id": "g3_t4",
+      "type": "conversion",
+      "question": "单数：story",
+      "options": ["storys", "stories", "storyes", "story's"],
+      "correctAnswer": 1,
+      "explanation": "story以辅音+y结尾，改y为i加es，复数为stories",
+      "tag": "辅音+y改i+es"
+    },
+    {
+      "id": "g3_s1",
+      "type": "sentence",
+      "question": "I have three ______.",
+      "options": ["key", "keys", "keies", "key's"],
+      "correctAnswer": 1,
+      "explanation": "three提示复数，key以元音+y结尾，直接加s变为keys",
+      "tag": "数量词+元音+y加s"
+    },
+    {
+      "id": "g3_s2",
+      "type": "sentence",
+      "question": "There are many ______ in the garden.",
+      "options": ["lady", "ladys", "ladies", "lady's"],
+      "correctAnswer": 2,
+      "explanation": "many提示复数，lady以辅音+y结尾，改y为i加es变为ladies",
+      "tag": "数量词+辅音+y改i+es"
+    },
+    {
+      "id": "g3_t5",
+      "type": "conversion",
+      "question": "单数：toy",
+      "options": ["toys", "toies", "toyes", "toy's"],
+      "correctAnswer": 0,
+      "explanation": "toy以元音+y结尾，直接加s，复数为toys",
+      "tag": "元音+y加s"
+    },
+    {
+      "id": "g3_s3",
+      "type": "sentence",
+      "question": "She reads many ______ every month.",
+      "options": ["diary", "diarys", "diaries", "diary's"],
+      "correctAnswer": 2,
+      "explanation": "many提示复数，diary以辅音+y结尾，改y为i加es变为diaries",
+      "tag": "数量词+辅音+y改i+es"
+    },
+    {
+      "id": "g3_t6",
+      "type": "conversion",
+      "question": "单数：day",
+      "options": ["days", "daies", "dayes", "day's"],
+      "correctAnswer": 0,
+      "explanation": "day以元音+y结尾，直接加s，复数为days",
+      "tag": "元音+y加s"
+    },
+    {
+      "id": "g3_s4",
+      "type": "sentence",
+      "question": "The ______ are very busy.",
+      "options": ["family", "familys", "families", "family's"],
+      "correctAnswer": 2,
+      "explanation": "are提示复数，family以辅音+y结尾，改y为i加es变为families",
+      "tag": "be动词are+辅音+y改i+es"
+    }
+  ]
+}

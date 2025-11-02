@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"sync"
 	"time"
 
@@ -15,6 +16,17 @@ import (
 	"path/filepath"
 )
 
+// GradeData 单个关卡数据结构
+type GradeData struct {
+	Version        string     `json:"version"`
+	GradeID        int        `json:"gradeId"`
+	Name           string     `json:"name"`
+	Description    string     `json:"description"`
+	RequiredScore  int        `json:"requiredScore"`
+	TotalQuestions int        `json:"totalQuestions"`
+	Questions      []Question `json:"questions"`
+}
+
 // Question 题目结构体
 type Question struct {
 	ID            string   `json:"id"`
@@ -23,100 +35,156 @@ type Question struct {
 	Options       []string `json:"options"`
 	CorrectAnswer int      `json:"correctAnswer"`
 	Explanation   string   `json:"explanation"`
-	Tag           string   `json:"考点"`
+	Tag           string   `json:"tag"`
+}
+
+// GradesConfig 关卡配置结构
+type GradesConfig struct {
+	Version     string      `json:"version"`
+	TotalGrades int         `json:"totalGrades"`
+	Grades      []GradeInfo `json:"grades"`
+}
+
+type GradeInfo struct {
+	GradeID        int    `json:"gradeId"`
+	Name           string `json:"name"`
+	Description    string `json:"description"`
+	RequiredScore  int    `json:"requiredScore"`
+	TotalQuestions int    `json:"totalQuestions"`
+	Icon           string `json:"icon"`
 }
 
 var (
-	// 全局缓存数据，保护并发读写使用锁
-	cachedQuestions []Question
-	// 文件版本（这里使用文件最后修改时间的 UnixNano 表示版本）
-	jsonVersion string
+	// 关卡数据缓存：map[gradeId]GradeData
+	gradesCache map[int]*GradeData
+	// 关卡配置缓存
+	configCache *GradesConfig
 	dataMutex   sync.RWMutex
 )
 
 func main() {
-	// 启动时加载一次 JSON 数据
-	reloadJSON()
+	// 启动时初始化缓存
+	gradesCache = make(map[int]*GradeData)
+	loadGradesConfig()
 
-	// 启动文件监控，检测 JSON 文件变化后自动更新缓存
-	go watchJsonDataFileChanged()
+	// 启动文件监控
+	go watchDataFiles()
 
 	r := gin.Default()
 	r.Use(CORSMiddleware())
 
-	// /api/questions 接口，返回所有题目数据
-	r.GET("/api/questions", func(c *gin.Context) {
+	// 获取关卡配置列表
+	r.GET("/api/grades", func(c *gin.Context) {
 		dataMutex.RLock()
-		questions := cachedQuestions
+		config := configCache
 		dataMutex.RUnlock()
 
-		// 生成考点列表
-		tagsMap := make(map[string]bool)
-		for _, item := range questions {
-			tagsMap[item.Tag] = true
+		c.JSON(http.StatusOK, config)
+	})
+
+	// 获取指定关卡的版本号
+	r.GET("/api/version/grade/:id", func(c *gin.Context) {
+		gradeID, err := strconv.Atoi(c.Param("id"))
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "无效的关卡ID"})
+			return
 		}
-		tagList := make([]string, 0, len(tagsMap))
-		for k := range tagsMap {
-			tagList = append(tagList, k)
+
+		// 加载或获取关卡数据
+		gradeData := loadGrade(gradeID)
+		if gradeData == nil {
+			c.JSON(http.StatusNotFound, gin.H{"error": "关卡不存在"})
+			return
 		}
 
 		c.JSON(http.StatusOK, gin.H{
-			"total":     len(questions),
-			"tags":      tagList,
-			"questions": questions,
-			"version":   jsonVersion,
+			"gradeId": gradeID,
+			"version": gradeData.Version,
 		})
 	})
 
-	// /api/version 接口返回当前 JSON 版本号
-	r.GET("/api/version", func(c *gin.Context) {
-		dataMutex.RLock()
-		version := jsonVersion
-		dataMutex.RUnlock()
-		c.JSON(http.StatusOK, gin.H{
-			"version": version,
-		})
+	// 获取指定关卡的题目数据
+	r.GET("/api/questions/grade/:id", func(c *gin.Context) {
+		gradeID, err := strconv.Atoi(c.Param("id"))
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "无效的关卡ID"})
+			return
+		}
+
+		gradeData := loadGrade(gradeID)
+		if gradeData == nil {
+			c.JSON(http.StatusNotFound, gin.H{"error": "关卡不存在"})
+			return
+		}
+
+		c.JSON(http.StatusOK, gradeData)
 	})
 
 	r.Run("127.0.0.1:8080")
 }
 
-// reloadJSON 读取 data/questions.json 文件，并更新全局缓存数据和版本号
-func reloadJSON() {
-	file, err := os.ReadFile("data/questions.json")
+// loadGradesConfig 加载关卡配置
+func loadGradesConfig() {
+	file, err := os.ReadFile("data/grades_config.json")
 	if err != nil {
-		log.Println("读取 data/questions.json 出错:", err)
+		log.Println("读取 grades_config.json 出错:", err)
 		return
 	}
-	var data []Question
-	err = json.Unmarshal(file, &data)
+
+	var config GradesConfig
+	err = json.Unmarshal(file, &config)
 	if err != nil {
-		log.Println("解析 JSON 出错:", err)
+		log.Println("解析 grades_config.json 出错:", err)
 		return
 	}
-	fi, err := os.Stat("data/questions.json")
-	if err != nil {
-		log.Println("获取文件信息出错:", err)
-		return
-	}
-	version := fmt.Sprintf("%d", fi.ModTime().UnixNano())
 
 	dataMutex.Lock()
-	cachedQuestions = data
-	jsonVersion = version
+	configCache = &config
 	dataMutex.Unlock()
 
-	log.Println("重新加载题库数据，共", len(data), "道题，当前版本:", jsonVersion)
+	log.Println("加载关卡配置成功，共", config.TotalGrades, "个关卡")
 }
 
-// watchJsonDataFileChanged 监听 data/questions.json 文件的变化，检测到变更时自动 reloadJSON
-func watchJsonDataFileChanged() {
-	// 获取 data/questions.json 的绝对路径及所在目录
-	jsonPath, err := filepath.Abs("data/questions.json")
-	if err != nil {
-		log.Fatal("获取 data/questions.json 的绝对路径失败:", err)
+// loadGrade 加载指定关卡的题目数据
+func loadGrade(gradeID int) *GradeData {
+	// 先检查缓存
+	dataMutex.RLock()
+	if data, exists := gradesCache[gradeID]; exists {
+		dataMutex.RUnlock()
+		return data
 	}
-	jsonDir := filepath.Dir(jsonPath)
+	dataMutex.RUnlock()
+
+	// 从文件加载
+	filename := fmt.Sprintf("data/grade_%d.json", gradeID)
+	file, err := os.ReadFile(filename)
+	if err != nil {
+		log.Printf("读取 %s 出错: %v\n", filename, err)
+		return nil
+	}
+
+	var gradeData GradeData
+	err = json.Unmarshal(file, &gradeData)
+	if err != nil {
+		log.Printf("解析 %s 出错: %v\n", filename, err)
+		return nil
+	}
+
+	// 缓存数据
+	dataMutex.Lock()
+	gradesCache[gradeID] = &gradeData
+	dataMutex.Unlock()
+
+	log.Printf("加载关卡%d成功，共%d道题，版本:%s\n", gradeID, len(gradeData.Questions), gradeData.Version)
+	return &gradeData
+}
+
+// watchDataFiles 监控data目录下的文件变化
+func watchDataFiles() {
+	dataDir, err := filepath.Abs("data")
+	if err != nil {
+		log.Fatal("获取 data 目录的绝对路径失败:", err)
+	}
 
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -124,12 +192,11 @@ func watchJsonDataFileChanged() {
 	}
 	defer watcher.Close()
 
-	// 监听整个目录
-	err = watcher.Add(jsonDir)
+	err = watcher.Add(dataDir)
 	if err != nil {
 		log.Fatal("添加目录到 watcher 失败:", err)
 	}
-	log.Println("开始监听目录:", jsonDir, "下的 questions.json 变化...")
+	log.Println("开始监听目录:", dataDir)
 
 	for {
 		select {
@@ -137,14 +204,24 @@ func watchJsonDataFileChanged() {
 			if !ok {
 				return
 			}
-			// 过滤目标文件
-			if filepath.Clean(event.Name) == filepath.Clean(jsonPath) {
-				// 处理写入、创建、重命名或删除等事件
-				if event.Op&(fsnotify.Write|fsnotify.Create|fsnotify.Rename|fsnotify.Remove) != 0 {
-					log.Println("检测到 questions.json 变化，事件：", event)
-					// 延时等待文件操作完成
-					time.Sleep(100 * time.Millisecond)
-					reloadJSON()
+			if event.Op&(fsnotify.Write|fsnotify.Create|fsnotify.Rename|fsnotify.Remove) != 0 {
+				log.Println("检测到文件变化，事件：", event)
+				time.Sleep(100 * time.Millisecond)
+
+				// 处理不同文件变化
+				filename := filepath.Base(event.Name)
+				if filename == "grades_config.json" {
+					loadGradesConfig()
+				} else if len(filename) > 11 && filename[:6] == "grade_" && filename[len(filename)-5:] == ".json" {
+					// grade_N.json 变化，清除对应缓存
+					var gradeID int
+					_, err := fmt.Sscanf(filename, "grade_%d.json", &gradeID)
+					if err == nil {
+						dataMutex.Lock()
+						delete(gradesCache, gradeID)
+						dataMutex.Unlock()
+						log.Printf("清除关卡%d缓存\n", gradeID)
+					}
 				}
 			}
 		case err, ok := <-watcher.Errors:

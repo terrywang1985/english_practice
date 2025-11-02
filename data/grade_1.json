@@ -1,0 +1,263 @@
+{
+  "version": "1.0.0",
+  "gradeId": 1,
+  "name": "基础入门",
+  "description": "规则复数 - 直接加s",
+  "requiredScore": 0,
+  "totalQuestions": 8,
+  "totalPool": 24,
+  "questions": [
+    {
+      "id": "g1_t1",
+      "type": "conversion",
+      "question": "单数：book",
+      "options": ["books", "bookes", "bookies", "book's"],
+      "correctAnswer": 0,
+      "explanation": "book以辅音结尾，直接加s，复数为books",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t2",
+      "type": "conversion",
+      "question": "单数：pen",
+      "options": ["pens", "penes", "penies", "pen's"],
+      "correctAnswer": 0,
+      "explanation": "pen以辅音结尾，直接加s，复数为pens",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s1",
+      "type": "sentence",
+      "question": "I have two ______.",
+      "options": ["car", "cars", "cares", "car's"],
+      "correctAnswer": 1,
+      "explanation": "two提示复数，car直接加s变为cars",
+      "tag": "数量词+直接加s"
+    },
+    {
+      "id": "g1_s2",
+      "type": "sentence",
+      "question": "There are many ______ in the library.",
+      "options": ["book", "books", "bookes", "book's"],
+      "correctAnswer": 1,
+      "explanation": "many提示复数，book直接加s变为books",
+      "tag": "数量词+直接加s"
+    },
+    {
+      "id": "g1_t3",
+      "type": "conversion",
+      "question": "单数：cat",
+      "options": ["cats", "cates", "caties", "cat's"],
+      "correctAnswer": 0,
+      "explanation": "cat以辅音结尾，直接加s，复数为cats",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t4",
+      "type": "conversion",
+      "question": "单数：dog",
+      "options": ["dogs", "doges", "dogies", "dog's"],
+      "correctAnswer": 0,
+      "explanation": "dog以辅音结尾，直接加s，复数为dogs",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s3",
+      "type": "sentence",
+      "question": "The ______ are playing outside.",
+      "options": ["student", "students", "studentes", "student's"],
+      "correctAnswer": 1,
+      "explanation": "are提示复数，student直接加s变为students",
+      "tag": "be动词are+直接加s"
+    },
+    {
+      "id": "g1_s4",
+      "type": "sentence",
+      "question": "She likes ______.",
+      "options": ["flower", "flowers", "floweres", "flower's"],
+      "correctAnswer": 1,
+      "explanation": "根据语境应填复数，flower直接加s变为flowers",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t5",
+      "type": "conversion",
+      "question": "单数：bag",
+      "options": ["bags", "bages", "bagies", "bag's"],
+      "correctAnswer": 0,
+      "explanation": "bag以辅音结尾，直接加s，复数为bags",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t6",
+      "type": "conversion",
+      "question": "单数：cup",
+      "options": ["cups", "cupes", "cupies", "cup's"],
+      "correctAnswer": 0,
+      "explanation": "cup以辅音结尾，直接加s，复数为cups",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t7",
+      "type": "conversion",
+      "question": "单数：desk",
+      "options": ["desks", "deskes", "deskies", "desk's"],
+      "correctAnswer": 0,
+      "explanation": "desk以辅音结尾，直接加s，复数为desks",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t8",
+      "type": "conversion",
+      "question": "单数：egg",
+      "options": ["eggs", "egges", "eggies", "egg's"],
+      "correctAnswer": 0,
+      "explanation": "egg以辅音结尾，直接加s，复数为eggs",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s5",
+      "type": "sentence",
+      "question": "I see many ______ in the park.",
+      "options": ["tree", "trees", "treees", "tree's"],
+      "correctAnswer": 1,
+      "explanation": "many提示复数，tree直接加s变为trees",
+      "tag": "数量词+直接加s"
+    },
+    {
+      "id": "g1_t9",
+      "type": "conversion",
+      "question": "单数：bird",
+      "options": ["birds", "birdes", "birdies", "bird's"],
+      "correctAnswer": 0,
+      "explanation": "bird以辅音结尾，直接加s，复数为birds",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t10",
+      "type": "conversion",
+      "question": "单数：room",
+      "options": ["rooms", "roomes", "roomies", "room's"],
+      "correctAnswer": 0,
+      "explanation": "room以辅音结尾，直接加s，复数为rooms",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s6",
+      "type": "sentence",
+      "question": "There are five ______ on the table.",
+      "options": ["apple", "apples", "applees", "apple's"],
+      "correctAnswer": 1,
+      "explanation": "five提示复数，apple直接加s变为apples",
+      "tag": "数量词+直接加s"
+    },
+    {
+      "id": "g1_t11",
+      "type": "conversion",
+      "question": "单数：hand",
+      "options": ["hands", "handes", "handies", "hand's"],
+      "correctAnswer": 0,
+      "explanation": "hand以辅音结尾，直接加s，复数为hands",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t12",
+      "type": "conversion",
+      "question": "单数：girl",
+      "options": ["girls", "girles", "girlies", "girl's"],
+      "correctAnswer": 0,
+      "explanation": "girl以辅音结尾，直接加s，复数为girls",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s7",
+      "type": "sentence",
+      "question": "The ______ are very big.",
+      "options": ["building", "buildings", "buildinges", "building's"],
+      "correctAnswer": 1,
+      "explanation": "are提示复数，building直接加s变为buildings",
+      "tag": "be动词are+直接加s"
+    },
+    {
+      "id": "g1_t13",
+      "type": "conversion",
+      "question": "单数：table",
+      "options": ["tables", "tablees", "tablies", "table's"],
+      "correctAnswer": 0,
+      "explanation": "table以辅音结尾，直接加s，复数为tables",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t14",
+      "type": "conversion",
+      "question": "单数：window",
+      "options": ["windows", "windowes", "windowies", "window's"],
+      "correctAnswer": 0,
+      "explanation": "window以辅音结尾，直接加s，复数为windows",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s8",
+      "type": "sentence",
+      "question": "I like ______.",
+      "options": ["banana", "bananas", "banaes", "banana's"],
+      "correctAnswer": 1,
+      "explanation": "根据语境应填复数，banana直接加s变为bananas",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t15",
+      "type": "conversion",
+      "question": "单数：chair",
+      "options": ["chairs", "chaires", "chairies", "chair's"],
+      "correctAnswer": 0,
+      "explanation": "chair以辅音结尾，直接加s，复数为chairs",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t16",
+      "type": "conversion",
+      "question": "单数：friend",
+      "options": ["friends", "friendes", "friendies", "friend's"],
+      "correctAnswer": 0,
+      "explanation": "friend以辅音结尾，直接加s，复数为friends",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s9",
+      "type": "sentence",
+      "question": "She has many ______.",
+      "options": ["toy", "toys", "toyes", "toy's"],
+      "correctAnswer": 1,
+      "explanation": "many提示复数，toy直接加s变为toys",
+      "tag": "数量词+直接加s"
+    },
+    {
+      "id": "g1_t17",
+      "type": "conversion",
+      "question": "单数：picture",
+      "options": ["pictures", "picturees", "picturies", "picture's"],
+      "correctAnswer": 0,
+      "explanation": "picture以辅音结尾，直接加s，复数为pictures",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_t18",
+      "type": "conversion",
+      "question": "单数：computer",
+      "options": ["computers", "computeres", "computeries", "computer's"],
+      "correctAnswer": 0,
+      "explanation": "computer以辅音结尾，直接加s，复数为computers",
+      "tag": "直接加s"
+    },
+    {
+      "id": "g1_s10",
+      "type": "sentence",
+      "question": "There are many ______ in the classroom.",
+      "options": ["desk", "desks", "deskes", "desk's"],
+      "correctAnswer": 1,
+      "explanation": "many提示复数，desk直接加s变为desks",
+      "tag": "数量词+直接加s"
+    }
+  ]
+}

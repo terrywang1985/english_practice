@@ -1,14 +1,15 @@
-const questionManager = require('../../utils/questionManager');
+const gradeManager = require('../../utils/gradeManager');
 
 Page({
   data: {
-    mode: 'random', // 练习模式：random/conversion/sentence
+    gradeId: 0,  // 关卡ID
+    gradeData: null,  // 关卡数据
     questions: [], // 当前练习的题目列表
     currentIndex: 0, // 当前题目索引
     currentQuestion: null, // 当前题目对象
     selectedIndex: -1, // 用户选择的选项索引
     showAnswer: false, // 是否显示答案
-    totalCount: 10, // 总题数
+    totalCount: 8, // 总题数（每次练习题数）
     correctCount: 0, // 答对数量
     optionLabels: ['A', 'B', 'C', 'D'], // 选项标签
     progress: 0, // 进度百分比
@@ -16,52 +17,49 @@ Page({
   },
 
   onLoad(options) {
-    const mode = options.mode || 'random';
-    this.setData({ mode });
+    const gradeId = parseInt(options.gradeId) || 1;
+    this.setData({ gradeId });
     this.initPractice();
   },
 
   // 初始化练习
   async initPractice() {
-    // 显示加载提示
     wx.showLoading({
       title: '加载题目中...',
       mask: true
     });
 
     try {
-      // 确保题库已加载
-      if (!questionManager.isLoaded) {
-        await questionManager.loadQuestionsFromServer();
+      const { gradeId } = this.data;
+      
+      // 加载关卡数据
+      const result = await gradeManager.loadGrade(gradeId);
+      
+      if (!result.success) {
+        throw new Error(result.error || '加载失败');
       }
-
-      let questions = [];
-      const { mode, totalCount } = this.data;
-
-      // 根据模式获取题目
-      if (mode === 'random') {
-        questions = questionManager.getRandomQuestions(totalCount);
-      } else if (mode === 'conversion') {
-        const conversionQuestions = questionManager.getQuestionsByType('conversion');
-        questions = questionManager.shuffleArray(conversionQuestions).slice(0, totalCount);
-      } else if (mode === 'sentence') {
-        const sentenceQuestions = questionManager.getQuestionsByType('sentence');
-        questions = questionManager.shuffleArray(sentenceQuestions).slice(0, totalCount);
-      }
-
-      // 检查是否有题目
-      if (!questions || questions.length === 0) {
+      
+      const gradeData = result.data;
+      const allQuestions = gradeData.questions || [];
+      
+      if (allQuestions.length === 0) {
         throw new Error('没有可用的题目');
       }
-
+      
+      // 从题库中随机抽取题目（默认8题）
+      const totalCount = gradeData.totalQuestions || 8;
+      const shuffled = this.shuffleArray([...allQuestions]);
+      const questions = shuffled.slice(0, Math.min(totalCount, allQuestions.length));
+      
       // 打乱每道题的选项顺序
-      questions = questions.map(q => questionManager.shuffleOptions(q));
+      const questionsWithShuffledOptions = questions.map(q => gradeManager.shuffleOptions(q));
 
       this.setData({
-        questions,
-        currentQuestion: questions[0],
-        totalCount: questions.length,
-        progress: ((0 + 1) / questions.length) * 100
+        gradeData,
+        questions: questionsWithShuffledOptions,
+        currentQuestion: questionsWithShuffledOptions[0],
+        totalCount: questionsWithShuffledOptions.length,
+        progress: (1 / questionsWithShuffledOptions.length) * 100
       });
 
       wx.hideLoading();
@@ -70,13 +68,23 @@ Page({
       wx.hideLoading();
       wx.showModal({
         title: '加载失败',
-        content: '题库加载失败，请返回重试',
+        content: error.message || '题库加载失败，请返回重试',
         showCancel: false,
         success: () => {
           wx.navigateBack();
         }
       });
     }
+  },
+
+  // Fisher-Yates 洗牌算法
+  shuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
   },
 
   // 选择选项
@@ -157,10 +165,10 @@ Page({
 
   // 完成练习
   finishPractice() {
-    const { correctCount, totalCount, answerRecords } = this.data;
+    const { gradeId, correctCount, totalCount, answerRecords } = this.data;
     
     wx.redirectTo({
-      url: `/pages/result/result?correct=${correctCount}&total=${totalCount}&records=${JSON.stringify(answerRecords)}`
+      url: `/pages/result/result?gradeId=${gradeId}&correct=${correctCount}&total=${totalCount}&records=${encodeURIComponent(JSON.stringify(answerRecords))}`
     });
   }
 });

@@ -3,82 +3,67 @@
   <view class="loading-mask" wx:if="{{loading}}">
     <view class="loading-content">
       <text class="loading-icon">⏳</text>
-      <text class="loading-text">正在加载题库...</text>
+      <text class="loading-text">正在加载关卡...</text>
     </view>
   </view>
 
   <!-- 错误提示 -->
   <view class="error-tip" wx:if="{{loadError && !loading}}">
-    <text class="error-icon">{{fromCache ? '💾' : '⚠️'}}</text>
+    <text class="error-icon">⚠️</text>
     <text class="error-text">{{errorMsg}}</text>
+    <button class="retry-btn" bindtap="loadGrades">重试</button>
   </view>
 
-  <!-- 版本信息 -->
-  <view class="version-tip" wx:if="{{version && !loading && !loadError}}">
-    <text class="version-icon">✅</text>
-    <text class="version-text">{{fromCache ? '本地缓存' : '最新版本'}}：v{{version.slice(-8)}}</text>
-  </view>
-
-  <view class="header">
-    <text class="title">英语单复数专项练习</text>
-    <text class="subtitle">选择题模式 · JSON配置题库</text>
-  </view>
-
-  <view class="stats-card">
-    <view class="stat-item">
-      <text class="stat-num">{{totalQuestions}}</text>
-      <text class="stat-label">题库总数</text>
+  <!-- 用户进度信息 -->
+  <view class="progress-header" wx:if="{{!loading && userProgress}}">
+    <view class="progress-info">
+      <text class="progress-label">当前关卡</text>
+      <text class="progress-value">{{userProgress.currentGrade}} / {{grades.length}}</text>
     </view>
-    <view class="stat-item">
-      <text class="stat-num">{{totalTags}}</text>
-      <text class="stat-label">考点类型</text>
+    <view class="progress-info">
+      <text class="progress-label">总得分</text>
+      <text class="progress-value">{{userProgress.totalScore}}</text>
     </view>
   </view>
 
-  <view class="mode-section">
-    <text class="section-title">练习模式</text>
-    
-    <view class="mode-card" bindtap="startPractice" data-mode="random">
-      <view class="mode-icon">🎲</view>
-      <view class="mode-info">
-        <text class="mode-name">随机练习</text>
-        <text class="mode-desc">混合题型，随机出题</text>
+  <!-- 关卡列表 -->
+  <view class="grades-list" wx:if="{{!loading}}">
+    <view 
+      class="grade-card {{item.unlocked ? (item.completed ? 'completed' : 'unlocked') : 'locked'}}" 
+      wx:for="{{grades}}" 
+      wx:key="gradeId"
+      bindtap="startGrade"
+      data-id="{{item.gradeId}}"
+    >
+      <!-- 关卡头部 -->
+      <view class="grade-header">
+        <view class="grade-icon">{{item.icon}}</view>
+        <view class="grade-info">
+          <text class="grade-name">{{item.name}}</text>
+          <text class="grade-desc">{{item.description}}</text>
+        </view>
+        <view class="grade-status">
+          <text class="status-icon" wx:if="{{item.completed}}">✅</text>
+          <text class="status-icon" wx:elif="{{!item.unlocked}}">🔒</text>
+          <text class="status-icon" wx:else>▶️</text>
+        </view>
       </view>
-      <view class="mode-arrow">→</view>
-    </view>
 
-    <view class="mode-card" bindtap="startPractice" data-mode="conversion">
-      <view class="mode-icon">🔄</view>
-      <view class="mode-info">
-        <text class="mode-name">纯转换题</text>
-        <text class="mode-desc">单复数形式转换专项</text>
+      <!-- 关卡详情 -->
+      <view class="grade-details">
+        <view class="detail-item">
+          <text class="detail-label">题目数</text>
+          <text class="detail-value">{{item.totalQuestions}}题</text>
+        </view>
+        <view class="detail-item" wx:if="{{item.score > 0}}">
+          <text class="detail-label">得分</text>
+          <text class="detail-value">{{item.score}} / {{item.totalQuestions}}</text>
+        </view>
+        <view class="detail-item" wx:if="{{item.requiredScore > 0}}">
+          <text class="detail-label">解锁条件</text>
+          <text class="detail-value">总分≥{{item.requiredScore}}</text>
+        </view>
       </view>
-      <view class="mode-arrow">→</view>
-    </view>
-
-    <view class="mode-card" bindtap="startPractice" data-mode="sentence">
-      <view class="mode-icon">📝</view>
-      <view class="mode-info">
-        <text class="mode-name">句子运用题</text>
-        <text class="mode-desc">语境中选择正确形式</text>
-      </view>
-      <view class="mode-arrow">→</view>
-    </view>
-  </view>
-
-  <view class="tips-section">
-    <text class="tips-title">💡 练习特色</text>
-    <view class="tip-item">
-      <text class="tip-dot">•</text>
-      <text class="tip-text">题目随机不重复，选项顺序每次打乱</text>
-    </view>
-    <view class="tip-item">
-      <text class="tip-dot">•</text>
-      <text class="tip-text">即时反馈，显示正确答案和详细解析</text>
-    </view>
-    <view class="tip-item">
-      <text class="tip-dot">•</text>
-      <text class="tip-text">覆盖全部考点：常规规则、特殊变化、语境搭配</text>
     </view>
   </view>
 </view>

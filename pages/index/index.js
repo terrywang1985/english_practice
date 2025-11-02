@@ -1,79 +1,98 @@
-const questionManager = require('../../utils/questionManager');
+const gradeManager = require('../../utils/gradeManager');
 
 Page({
   data: {
-    totalQuestions: 0,
-    totalTags: 0,
+    grades: [],  // 关卡列表
+    userProgress: null,  // 用户进度
     loading: true,
     loadError: false,
-    errorMsg: '',
-    fromCache: false,
-    version: ''
+    errorMsg: ''
   },
 
   onLoad() {
-    this.loadStats();
+    this.loadGrades();
   },
 
-  async loadStats() {
+  onShow() {
+    // 每次显示时刷新用户进度
+    this.refreshProgress();
+  },
+
+  async loadGrades() {
     this.setData({ loading: true, loadError: false });
     
     try {
-      // 从服务器加载题库（带版本检查）
-      const result = await questionManager.loadQuestionsFromServer();
+      // 加载关卡配置列表
+      const config = await gradeManager.loadGradesConfig();
+      const userProgress = gradeManager.getUserProgress();
       
-      if (result.success) {
-        const allQuestions = questionManager.getAllQuestions();
-        const allTags = questionManager.getAllTags();
+      // 为每个关卡添加解锁和完成状态
+      const grades = config.grades.map(grade => {
+        const unlocked = gradeManager.isGradeUnlocked(grade.gradeId);
+        const completed = gradeManager.isGradeCompleted(grade.gradeId);
+        const score = gradeManager.getGradeScore(grade.gradeId);
         
-        let statusMsg = '';
-        if (result.fromCache) {
-          statusMsg = '使用本地缓存数据';
-        } else if (result.isBackup) {
-          statusMsg = '使用内置备份数据';
-        } else {
-          statusMsg = '已更新为最新版本';
-        }
-        
-        this.setData({
-          totalQuestions: allQuestions.length,
-          totalTags: allTags.length,
-          loading: false,
-          fromCache: result.fromCache || false,
-          version: result.version || '',
-          loadError: result.isBackup || false,
-          errorMsg: statusMsg
-        });
-
-        // 如果是从服务器更新的，显示提示
-        if (!result.fromCache && !result.isBackup) {
-          wx.showToast({
-            title: '题库已更新',
-            icon: 'success',
-            duration: 2000
-          });
-        }
-      } else {
-        this.setData({
-          loading: false,
-          loadError: true,
-          errorMsg: result.error || '加载失败'
-        });
-      }
+        return {
+          ...grade,
+          unlocked,
+          completed,
+          score
+        };
+      });
+      
+      this.setData({
+        grades,
+        userProgress,
+        loading: false
+      });
+      
     } catch (error) {
-      console.error('加载错误：', error);
+      console.error('加载关卡失败：', error);
       this.setData({
         loading: false,
         loadError: true,
-        errorMsg: '加载失败，请重试'
+        errorMsg: '加载失败，请检查网络连接'
       });
     }
   },
 
-  startPractice(e) {
-    const mode = e.currentTarget.dataset.mode;
+  refreshProgress() {
+    const userProgress = gradeManager.getUserProgress();
+    const grades = this.data.grades.map(grade => {
+      const unlocked = gradeManager.isGradeUnlocked(grade.gradeId);
+      const completed = gradeManager.isGradeCompleted(grade.gradeId);
+      const score = gradeManager.getGradeScore(grade.gradeId);
+      
+      return {
+        ...grade,
+        unlocked,
+        completed,
+        score
+      };
+    });
+    
+    this.setData({ grades, userProgress });
+  },
+
+  startGrade(e) {
+    const gradeId = e.currentTarget.dataset.id;
+    const grade = this.data.grades.find(g => g.gradeId === gradeId);
+    
+    if (!grade) return;
+    
+    // 检查是否解锁
+    if (!grade.unlocked) {
+      wx.showToast({
+        title: '请先完成前面的关卡',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    
+    // 跳转到练习页面
     wx.navigateTo({
-      url: `/pages/practice/practice?mode=${mode}`
+      url: `/pages/practice/practice?gradeId=${gradeId}`
     });
   }
 });

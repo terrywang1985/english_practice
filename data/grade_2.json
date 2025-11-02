@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "gradeId": 2,
+  "name": "特殊结尾",
+  "description": "以s, x, ch, sh结尾加-es",
+  "requiredScore": 8,
+  "totalQuestions": 8,
+  "questions": [
+    {
+      "id": "g2_t1",
+      "type": "conversion",
+      "question": "单数：bus",
+      "options": ["buses", "buss", "busies", "bus's"],
+      "correctAnswer": 0,
+      "explanation": "bus以s结尾，加es，复数为buses",
+      "tag": "s结尾+es"
+    },
+    {
+      "id": "g2_t2",
+      "type": "conversion",
+      "question": "单数：box",
+      "options": ["boxs", "boxes", "boxies", "box's"],
+      "correctAnswer": 1,
+      "explanation": "box以x结尾，加es，复数为boxes",
+      "tag": "x结尾+es"
+    },
+    {
+      "id": "g2_t3",
+      "type": "conversion",
+      "question": "单数：watch",
+      "options": ["watchs", "watches", "watchies", "watch's"],
+      "correctAnswer": 1,
+      "explanation": "watch以ch结尾，加es，复数为watches",
+      "tag": "ch结尾+es"
+    },
+    {
+      "id": "g2_t4",
+      "type": "conversion",
+      "question": "单数：dish",
+      "options": ["dishs", "dishes", "dishies", "dish's"],
+      "correctAnswer": 1,
+      "explanation": "dish以sh结尾，加es，复数为dishes",
+      "tag": "sh结尾+es"
+    },
+    {
+      "id": "g2_s1",
+      "type": "sentence",
+      "question": "I see three ______ on the desk.",
+      "options": ["glass", "glasses", "glasss", "glassies"],
+      "correctAnswer": 1,
+      "explanation": "three提示复数，glass以ss结尾，加es变为glasses",
+      "tag": "数量词+ss结尾+es"
+    },
+    {
+      "id": "g2_s2",
+      "type": "sentence",
+      "question": "She has two ______.",
+      "options": ["brush", "brushs", "brushes", "brush's"],
+      "correctAnswer": 2,
+      "explanation": "two提示复数，brush以sh结尾，加es变为brushes",
+      "tag": "数量词+sh结尾+es"
+    },
+    {
+      "id": "g2_t5",
+      "type": "conversion",
+      "question": "单数：class",
+      "options": ["classes", "classs", "classies", "class's"],
+      "correctAnswer": 0,
+      "explanation": "class以ss结尾，加es，复数为classes",
+      "tag": "ss结尾+es"
+    },
+    {
+      "id": "g2_s3",
+      "type": "sentence",
+      "question": "There are many ______ in the zoo.",
+      "options": ["fox", "foxs", "foxes", "foxies"],
+      "correctAnswer": 2,
+      "explanation": "many提示复数，fox以x结尾，加es变为foxes",
+      "tag": "数量词+x结尾+es"
+    }
+  ]
+}
