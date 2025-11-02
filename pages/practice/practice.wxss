@@ -103,18 +103,28 @@
 }
 
 .option-item.selected {
-  border-color: #667eea;
-  background: rgba(102, 126, 234, 0.05);
+  border-color: #ff9500;
+  background: #ff9500;
+}
+
+.option-item.selected .option-label {
+  background: #fff;
+  color: #ff9500;
+}
+
+.option-item.selected .option-text {
+  color: #fff;
+  font-weight: 600;
 }
 
 .option-item.correct {
   border-color: #52c41a;
-  background: rgba(82, 196, 26, 0.05);
+  background: #52c41a;
 }
 
 .option-item.wrong {
   border-color: #ff4d4f;
-  background: rgba(255, 77, 79, 0.05);
+  background: #ff4d4f;
 }
 
 .option-label {
@@ -129,6 +139,7 @@
   font-weight: bold;
   color: #666;
   margin-right: 20rpx;
+  flex-shrink: 0;
 }
 
 .option-item.selected .option-label {
@@ -137,19 +148,30 @@
 }
 
 .option-item.correct .option-label {
-  background: #52c41a;
-  color: #fff;
+  background: #fff;
+  color: #52c41a;
 }
 
 .option-item.wrong .option-label {
-  background: #ff4d4f;
+  background: #fff;
+  color: #ff4d4f;
+}
+
+.option-item.correct .option-text {
   color: #fff;
+  font-weight: 600;
+}
+
+.option-item.wrong .option-text {
+  color: #fff;
+  font-weight: 600;
 }
 
 .option-text {
   flex: 1;
   font-size: 30rpx;
   color: #333;
+  word-break: break-word;
 }
 
 .option-icon {
