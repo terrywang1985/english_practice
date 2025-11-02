@@ -80,11 +80,5 @@
       <text class="tip-dot">•</text>
       <text class="tip-text">覆盖全部考点：常规规则、特殊变化、语境搭配</text>
     </view>
-    
-    <!-- 强制刷新按钮 -->
-    <button class="refresh-btn" bindtap="forceRefresh" wx:if="{{!loading}}">
-      <text class="refresh-icon">🔄</text>
-      <text>强制刷新题库</text>
-    </button>
   </view>
 </view>

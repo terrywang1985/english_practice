@@ -178,17 +178,6 @@ class QuestionManager {
     }
   }
 
-  // 清除本地缓存
-  clearCache() {
-    try {
-      wx.removeStorageSync(CACHE_KEY);
-      wx.removeStorageSync(VERSION_KEY);
-      console.log('缓存已清除');
-    } catch (error) {
-      console.error('清除缓存失败:', error);
-    }
-  }
-
   // 加载本地备份数据（当服务器不可用且无缓存时）
   loadLocalBackup() {
     this.allQuestions = [

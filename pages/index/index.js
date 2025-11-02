@@ -75,21 +75,5 @@ Page({
     wx.navigateTo({
       url: `/pages/practice/practice?mode=${mode}`
     });
-  },
-
-  // 强制刷新，清除缓存并重新从服务器加载
-  forceRefresh() {
-    wx.showModal({
-      title: '强制刷新',
-      content: '将清除本地缓存并从服务器重新获取题库，是否继续？',
-      success: (res) => {
-        if (res.confirm) {
-          // 清除缓存
-          questionManager.clearCache();
-          // 重新加载
-          this.loadStats();
-        }
-      }
-    });
   }
 });
