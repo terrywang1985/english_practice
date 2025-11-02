@@ -1,0 +1,164 @@
+[
+  {
+    "id": "t1",
+    "type": "conversion",
+    "question": "单数：baby",
+    "options": ["babys", "babies", "babyes", "baby's"],
+    "correctAnswer": 1,
+    "explanation": "baby以辅音+y结尾，改y为i加es，复数为babies",
+    "tag": "改y为i+es"
+  },
+  {
+    "id": "t2",
+    "type": "conversion",
+    "question": "单数：child",
+    "options": ["childs", "children", "childes", "childen"],
+    "correctAnswer": 1,
+    "explanation": "child是不规则变化，复数为children",
+    "tag": "不规则变化"
+  },
+  {
+    "id": "t3",
+    "type": "conversion",
+    "question": "单数：wolf",
+    "options": ["wolfs", "wolfes", "wolves", "wolve"],
+    "correctAnswer": 2,
+    "explanation": "wolf以f结尾，改f为v加es，复数为wolves",
+    "tag": "改f为v+es"
+  },
+  {
+    "id": "t4",
+    "type": "conversion",
+    "question": "单数：sheep",
+    "options": ["sheeps", "sheepes", "sheep", "sheepies"],
+    "correctAnswer": 2,
+    "explanation": "sheep是单复数同形，复数仍为sheep",
+    "tag": "单复数同形"
+  },
+  {
+    "id": "t5",
+    "type": "conversion",
+    "question": "单数：mouse",
+    "options": ["mouses", "mice", "mousses", "mousees"],
+    "correctAnswer": 1,
+    "explanation": "mouse是不规则变化，复数为mice",
+    "tag": "不规则变化"
+  },
+  {
+    "id": "t6",
+    "type": "conversion",
+    "question": "单数：box",
+    "options": ["boxs", "boxes", "boxies", "boxe"],
+    "correctAnswer": 1,
+    "explanation": "box以x结尾，加es，复数为boxes",
+    "tag": "以s/x/ch/sh结尾+es"
+  },
+  {
+    "id": "t7",
+    "type": "conversion",
+    "question": "单数：foot",
+    "options": ["foots", "feet", "footes", "feets"],
+    "correctAnswer": 1,
+    "explanation": "foot是不规则变化，复数为feet",
+    "tag": "不规则变化"
+  },
+  {
+    "id": "t8",
+    "type": "conversion",
+    "question": "单数：tomato",
+    "options": ["tomatos", "tomatoes", "tomatoies", "tomatoe"],
+    "correctAnswer": 1,
+    "explanation": "tomato以辅音+o结尾，加es，复数为tomatoes",
+    "tag": "辅音+o结尾+es"
+  },
+  {
+    "id": "s1",
+    "type": "sentence",
+    "question": "There are three ______ in the box.",
+    "options": ["child", "children", "childs", "childes"],
+    "correctAnswer": 1,
+    "explanation": "句子中'three'提示复数，child是不规则变化，复数为children",
+    "tag": "数量词+不规则复数"
+  },
+  {
+    "id": "s2",
+    "type": "sentence",
+    "question": "I see a ______ on the tree.",
+    "options": ["birds", "bird", "birdes", "bird's"],
+    "correctAnswer": 1,
+    "explanation": "句子中'a'提示单数，应填bird",
+    "tag": "不定冠词a+单数"
+  },
+  {
+    "id": "s3",
+    "type": "sentence",
+    "question": "These ______ are red.",
+    "options": ["apple", "apples", "apple's", "applees"],
+    "correctAnswer": 1,
+    "explanation": "句子中'these'（这些）提示复数，应填apples",
+    "tag": "指示代词these+复数"
+  },
+  {
+    "id": "s4",
+    "type": "sentence",
+    "question": "The ______ is big.",
+    "options": ["trees", "tree", "tree's", "treees"],
+    "correctAnswer": 1,
+    "explanation": "句子中'is'提示单数，应填tree",
+    "tag": "be动词is+单数"
+  },
+  {
+    "id": "s5",
+    "type": "sentence",
+    "question": "I need some ______.",
+    "options": ["waters", "water", "wateres", "water's"],
+    "correctAnswer": 1,
+    "explanation": "water是不可数名词，没有复数形式",
+    "tag": "不可数名词"
+  },
+  {
+    "id": "s6",
+    "type": "sentence",
+    "question": "Five ______ are playing in the park.",
+    "options": ["baby", "babies", "babys", "babyes"],
+    "correctAnswer": 1,
+    "explanation": "句子中'five'提示复数，baby改y为i加es，复数为babies",
+    "tag": "数量词+改y为i+es"
+  },
+  {
+    "id": "s7",
+    "type": "sentence",
+    "question": "That ______ is mine.",
+    "options": ["books", "book", "book's", "bookes"],
+    "correctAnswer": 1,
+    "explanation": "句子中'that'（那个）提示单数，应填book",
+    "tag": "指示代词that+单数"
+  },
+  {
+    "id": "s8",
+    "type": "sentence",
+    "question": "Two ______ are on the shelf.",
+    "options": ["knife", "knives", "knifes", "knifees"],
+    "correctAnswer": 1,
+    "explanation": "句子中'two'提示复数，knife改f为v加es，复数为knives",
+    "tag": "数量词+改f为v+es"
+  },
+  {
+    "id": "s9",
+    "type": "sentence",
+    "question": "The ______ are running.",
+    "options": ["mouse", "mice", "mouses", "mousees"],
+    "correctAnswer": 1,
+    "explanation": "句子中'are'提示复数，mouse是不规则变化，复数为mice",
+    "tag": "be动词are+不规则复数"
+  },
+  {
+    "id": "s10",
+    "type": "sentence",
+    "question": "An ______ is on the table.",
+    "options": ["oranges", "orange", "orange's", "orangees"],
+    "correctAnswer": 1,
+    "explanation": "句子中'an'提示单数，应填orange",
+    "tag": "不定冠词an+单数"
+  }
+]

@@ -1,0 +1,84 @@
+<view class="practice-container">
+  <!-- 顶部进度栏 -->
+  <view class="progress-bar">
+    <view class="progress-info">
+      <text class="progress-text">第 {{currentIndex + 1}} / {{totalCount}} 题</text>
+      <text class="tag-badge">{{currentQuestion.tag}}</text>
+    </view>
+    <view class="progress-track">
+      <view class="progress-fill" style="width: {{progress}}%"></view>
+    </view>
+  </view>
+
+  <!-- 题目卡片 -->
+  <view class="question-card">
+    <view class="question-type">
+      <text class="type-badge">{{currentQuestion.type === 'conversion' ? '转换题' : '句子题'}}</text>
+    </view>
+    
+    <view class="question-content">
+      <text class="question-text">{{currentQuestion.question}}</text>
+    </view>
+  </view>
+
+  <!-- 选项区域 -->
+  <view class="options-container">
+    <view 
+      wx:for="{{currentQuestion.options}}" 
+      wx:key="index"
+      class="option-item {{selectedIndex === index ? 'selected' : ''}} {{showAnswer && index === currentQuestion.correctAnswer ? 'correct' : ''}} {{showAnswer && selectedIndex === index && index !== currentQuestion.correctAnswer ? 'wrong' : ''}}"
+      bindtap="selectOption"
+      data-index="{{index}}"
+    >
+      <view class="option-label">{{optionLabels[index]}}</view>
+      <text class="option-text">{{item}}</text>
+      <view class="option-icon" wx:if="{{showAnswer}}">
+        <text wx:if="{{index === currentQuestion.correctAnswer}}">✓</text>
+        <text wx:elif="{{selectedIndex === index}}">✗</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 答案解析 -->
+  <view class="explanation-card" wx:if="{{showAnswer}}">
+    <view class="explanation-header">
+      <text class="explanation-icon">💡</text>
+      <text class="explanation-title">答案解析</text>
+    </view>
+    <view class="explanation-content">
+      <view class="correct-answer">
+        <text class="label">正确答案：</text>
+        <text class="answer">{{currentQuestion.options[currentQuestion.correctAnswer]}}</text>
+      </view>
+      <text class="explanation-text">{{currentQuestion.explanation}}</text>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-actions">
+    <button 
+      class="action-btn submit-btn" 
+      wx:if="{{!showAnswer}}"
+      bindtap="submitAnswer"
+      disabled="{{selectedIndex === -1}}"
+    >
+      提交答案
+    </button>
+    
+    <button 
+      class="action-btn next-btn" 
+      wx:if="{{showAnswer && currentIndex < totalCount - 1}}"
+      bindtap="nextQuestion"
+    >
+      下一题
+    </button>
+    
+    <button 
+      class="action-btn finish-btn" 
+      wx:if="{{showAnswer && currentIndex === totalCount - 1}}"
+      bindtap="finishPractice"
+    >
+      完成练习
+    </button>
+  </view>
+</view>

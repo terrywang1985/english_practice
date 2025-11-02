@@ -1,0 +1,252 @@
+.index-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40rpx;
+}
+
+/* 加载状态 */
+.loading-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24rpx;
+  padding: 60rpx 80rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 错误提示 */
+.error-tip {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  border-left: 6rpx solid #ff9800;
+}
+
+.error-icon {
+  font-size: 36rpx;
+  margin-right: 12rpx;
+}
+
+.error-text {
+  flex: 1;
+  font-size: 26rpx;
+  color: #ff9800;
+}
+
+/* 版本信息 */
+.version-tip {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 20rpx 24rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  border-left: 6rpx solid #52c41a;
+}
+
+.version-icon {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+}
+
+.version-text {
+  flex: 1;
+  font-size: 24rpx;
+  color: #52c41a;
+  font-weight: 500;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60rpx;
+  padding-top: 40rpx;
+}
+
+.title {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stats-card {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24rpx;
+  padding: 40rpx 20rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 10rpx;
+}
+
+.stat-label {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.mode-section {
+  margin-bottom: 40rpx;
+}
+
+.section-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 24rpx;
+}
+
+.mode-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20rpx;
+  padding: 32rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.mode-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.mode-icon {
+  font-size: 48rpx;
+  margin-right: 24rpx;
+}
+
+.mode-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.mode-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.mode-arrow {
+  font-size: 36rpx;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.tips-section {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20rpx;
+  padding: 32rpx;
+  backdrop-filter: blur(10rpx);
+}
+
+.tips-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16rpx;
+}
+
+.tip-dot {
+  color: #fff;
+  margin-right: 12rpx;
+  font-size: 24rpx;
+}
+
+.tip-text {
+  flex: 1;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+}
+
+/* 刷新按钮 */
+.refresh-btn {
+  width: 100%;
+  margin-top: 24rpx;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2rpx solid rgba(255, 255, 255, 0.4);
+  border-radius: 16rpx;
+  padding: 20rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-btn::after {
+  border: none;
+}
+
+.refresh-icon {
+  font-size: 28rpx;
+  margin-right: 8rpx;
+}

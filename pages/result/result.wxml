@@ -1,0 +1,81 @@
+<view class="result-container">
+  <!-- 成绩卡片 -->
+  <view class="score-card">
+    <view class="score-header">
+      <text class="score-icon">{{scoreIcon}}</text>
+      <text class="score-title">{{scoreTitle}}</text>
+    </view>
+    
+    <view class="score-detail">
+      <view class="score-circle">
+        <text class="score-num">{{correctCount}}</text>
+        <text class="score-total">/ {{totalCount}}</text>
+      </view>
+      <text class="score-label">正确题数</text>
+    </view>
+
+    <view class="score-percent">
+      <text class="percent-num">{{accuracy}}%</text>
+      <text class="percent-label">正确率</text>
+    </view>
+  </view>
+
+  <!-- 统计信息 -->
+  <view class="stats-section">
+    <view class="stats-row">
+      <view class="stat-box correct">
+        <text class="stat-icon">✓</text>
+        <text class="stat-num">{{correctCount}}</text>
+        <text class="stat-label">答对</text>
+      </view>
+      <view class="stat-box wrong">
+        <text class="stat-icon">✗</text>
+        <text class="stat-num">{{wrongCount}}</text>
+        <text class="stat-label">答错</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 错题列表 -->
+  <view class="wrong-section" wx:if="{{wrongRecords.length > 0}}">
+    <view class="section-header">
+      <text class="section-icon">📋</text>
+      <text class="section-title">错题回顾</text>
+    </view>
+
+    <view class="wrong-list">
+      <view class="wrong-item" wx:for="{{wrongRecords}}" wx:key="index">
+        <view class="wrong-header">
+          <text class="wrong-tag">{{item.tag}}</text>
+          <text class="wrong-num">第{{item.index + 1}}题</text>
+        </view>
+        
+        <view class="wrong-question">
+          <text class="question-label">题目：</text>
+          <text class="question-content">{{item.question}}</text>
+        </view>
+
+        <view class="answer-row">
+          <text class="answer-label wrong-answer">你的答案：</text>
+          <text class="answer-content wrong-text">{{item.userAnswer}}</text>
+        </view>
+
+        <view class="answer-row">
+          <text class="answer-label correct-answer">正确答案：</text>
+          <text class="answer-content correct-text">{{item.correctAnswer}}</text>
+        </view>
+
+        <view class="explanation-row">
+          <text class="explanation-label">解析：</text>
+          <text class="explanation-content">{{item.explanation}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="bottom-actions">
+    <button class="action-btn primary-btn" bindtap="retryPractice">再练一次</button>
+    <button class="action-btn secondary-btn" bindtap="backHome">返回首页</button>
+  </view>
+</view>

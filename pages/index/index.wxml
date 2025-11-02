@@ -1,0 +1,90 @@
+<view class="index-container">
+  <!-- 加载状态 -->
+  <view class="loading-mask" wx:if="{{loading}}">
+    <view class="loading-content">
+      <text class="loading-icon">⏳</text>
+      <text class="loading-text">正在加载题库...</text>
+    </view>
+  </view>
+
+  <!-- 错误提示 -->
+  <view class="error-tip" wx:if="{{loadError && !loading}}">
+    <text class="error-icon">{{fromCache ? '💾' : '⚠️'}}</text>
+    <text class="error-text">{{errorMsg}}</text>
+  </view>
+
+  <!-- 版本信息 -->
+  <view class="version-tip" wx:if="{{version && !loading && !loadError}}">
+    <text class="version-icon">✅</text>
+    <text class="version-text">{{fromCache ? '本地缓存' : '最新版本'}}：v{{version.slice(-8)}}</text>
+  </view>
+
+  <view class="header">
+    <text class="title">英语单复数专项练习</text>
+    <text class="subtitle">选择题模式 · JSON配置题库</text>
+  </view>
+
+  <view class="stats-card">
+    <view class="stat-item">
+      <text class="stat-num">{{totalQuestions}}</text>
+      <text class="stat-label">题库总数</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">{{totalTags}}</text>
+      <text class="stat-label">考点类型</text>
+    </view>
+  </view>
+
+  <view class="mode-section">
+    <text class="section-title">练习模式</text>
+    
+    <view class="mode-card" bindtap="startPractice" data-mode="random">
+      <view class="mode-icon">🎲</view>
+      <view class="mode-info">
+        <text class="mode-name">随机练习</text>
+        <text class="mode-desc">混合题型，随机出题</text>
+      </view>
+      <view class="mode-arrow">→</view>
+    </view>
+
+    <view class="mode-card" bindtap="startPractice" data-mode="conversion">
+      <view class="mode-icon">🔄</view>
+      <view class="mode-info">
+        <text class="mode-name">纯转换题</text>
+        <text class="mode-desc">单复数形式转换专项</text>
+      </view>
+      <view class="mode-arrow">→</view>
+    </view>
+
+    <view class="mode-card" bindtap="startPractice" data-mode="sentence">
+      <view class="mode-icon">📝</view>
+      <view class="mode-info">
+        <text class="mode-name">句子运用题</text>
+        <text class="mode-desc">语境中选择正确形式</text>
+      </view>
+      <view class="mode-arrow">→</view>
+    </view>
+  </view>
+
+  <view class="tips-section">
+    <text class="tips-title">💡 练习特色</text>
+    <view class="tip-item">
+      <text class="tip-dot">•</text>
+      <text class="tip-text">题目随机不重复，选项顺序每次打乱</text>
+    </view>
+    <view class="tip-item">
+      <text class="tip-dot">•</text>
+      <text class="tip-text">即时反馈，显示正确答案和详细解析</text>
+    </view>
+    <view class="tip-item">
+      <text class="tip-dot">•</text>
+      <text class="tip-text">覆盖全部考点：常规规则、特殊变化、语境搭配</text>
+    </view>
+    
+    <!-- 强制刷新按钮 -->
+    <button class="refresh-btn" bindtap="forceRefresh" wx:if="{{!loading}}">
+      <text class="refresh-icon">🔄</text>
+      <text>强制刷新题库</text>
+    </button>
+  </view>
+</view>
